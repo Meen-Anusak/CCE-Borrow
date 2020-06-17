@@ -1,0 +1,33 @@
+<section class="material-half-bg">
+    <div class="cover"></div>
+</section>
+<mat-card class="login">
+    <div class="text-center mt-2">
+        <img src="assets/images/logo_cce.png" alt="" class="img-fluid">
+    </div>
+    <mat-card-title class="mt-4">เข้าสู่ระบบ</mat-card-title>
+    <mat-card-content>
+        <form class="p-3" #formLogin="ngForm" (submit)="onSubmit(formLogin)">
+            <p>
+                <mat-form-field>
+                    <input ngModel name="username" type="text" matInput placeholder="Username" required>
+                </mat-form-field>
+            </p>
+
+            <p>
+                <mat-form-field>
+                    <input ngModel name="password" type="password" matInput placeholder="Password" required>
+                </mat-form-field>
+            </p>
+
+
+            <div class="text-center">
+                <button type="submit" class="w-75" mat-button>เข้าสู่ระบบ <mat-icon>login</mat-icon></button>
+            </div>
+            <hr>
+            <div class="text-center text-secondary">
+                <span> © 2020 Copyright: CCE</span>
+            </div>
+        </form>
+    </mat-card-content>
+</mat-card>

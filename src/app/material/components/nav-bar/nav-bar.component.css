@@ -1,0 +1,14 @@
+mat-toolbar {
+    color: #cd2632;
+}
+
+.img {
+    width: 3rem;
+    height: 3rem;
+}
+
+.vl {
+    border-left: 1px solid #cd263196;
+    height: 15px;
+    margin: 0 10px;
+}

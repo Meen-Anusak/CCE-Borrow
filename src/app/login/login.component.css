@@ -1,0 +1,46 @@
+:host {
+    display: flex;
+    justify-content: center;
+    margin: 100px 0px;
+}
+
+.mat-form-field {
+    width: 100%;
+    min-width: 300px;
+}
+
+mat-card-title,
+mat-card-content {
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    width: 6.5rem;
+    height: 6.5rem;
+}
+
+.login {
+    margin-top: 75px;
+}
+
+.material-half-bg {
+    height: 100vh;
+    background-color: #e7e7e7;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.material-half-bg .cover {
+    background-color: #89161b;
+    height: 50vh;
+}
+
+button {
+    background-color: #89161b;
+    color: white;
+}
