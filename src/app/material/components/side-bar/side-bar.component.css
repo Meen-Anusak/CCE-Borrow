@@ -1,8 +1,13 @@
 mat-sidenav {
     width: 220px;
-    background-color: #cd2632;
+    background-color: #cd2631f6;
     color: white;
     border-right: 1px #cd2632 solid;
     border-radius: 1px 50px 50px 1px;
-    box-shadow: 5px 5px 10px #cd2631a6;
+    box-shadow: 10px 10px 20px #cd2631a6;
+}
+
+#namepd {
+    font-family: 'Staatliches', cursive;
+    font-size: 40px;
 }
