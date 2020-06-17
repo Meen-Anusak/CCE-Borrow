@@ -1,13 +1,22 @@
 mat-sidenav {
     width: 220px;
     background-color: #cd2631f6;
-    color: white;
-    border-right: 1px #cd2632 solid;
-    border-radius: 1px 50px 50px 1px;
-    box-shadow: 10px 10px 20px #cd2631a6;
+    /* color: white; */
+    border-radius: 115px 115px 1px 1px;
+    box-shadow: 5px -1px 20px 5px #cd2631a6;
+    margin-top: 10px;
+    border-right-style: none;
+    position: fixed;
 }
 
-#namepd {
-    font-family: 'Staatliches', cursive;
-    font-size: 40px;
+.img {
+    background-color: white;
+    border-radius: 115px 115px 115px 115px;
+    margin-bottom: 20px;
 }
+
+
+/* img {
+    width: 200px;
+    height: 210px;
+} */

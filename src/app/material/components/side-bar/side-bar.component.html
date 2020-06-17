@@ -1,9 +1,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
 <mat-sidenav-container fullscreen>
     <mat-sidenav #sidenav [mode]="moBileQueryMax.matches ? 'over':'side'" [opened]="moBileQueryMax.matches ? false:true">
-        <div class="text-center">
-            <h1 class="mt-3" id="namepd">CCE-B</h1>
+        <div class="text-center  img">
+
+            <img src="assets/images/logo_cce3.jpg" alt="" class="img-fluid rounded-circle">
         </div>
+        <app-side-menu></app-side-menu>
     </mat-sidenav>
     <mat-sidenav-content>
         <app-nav-bar [mobileQuery]="moBileQueryMax.matches ? false:true" (sidenavToggle)="sidenav.toggle()"></app-nav-bar>

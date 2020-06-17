@@ -1,3 +1,4 @@
 export const AuthenURL = {
-  Dashboard:'dashboard'
+  Dashboard:'dashboard',
+  Users:'users'
 }
