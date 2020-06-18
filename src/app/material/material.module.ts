@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { RouterModule } from "@angular/router";
+import { FormsModule } from "@angular/forms";
 
 import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -15,6 +16,7 @@ import {MatBadgeModule} from '@angular/material/badge';
 import {MatMenuModule} from '@angular/material/menu';
 import { SideMenuComponent } from './components/side-menu/side-menu.component';
 import {MatListModule} from '@angular/material/list';
+import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule({
@@ -22,6 +24,7 @@ import {MatListModule} from '@angular/material/list';
   imports: [
     CommonModule,
     RouterModule,
+    FormsModule,
     MatCardModule,
     MatFormFieldModule,
     MatButtonModule,
@@ -32,10 +35,12 @@ import {MatListModule} from '@angular/material/list';
     MatBadgeModule,
     MatMenuModule,
     MatListModule,
+    MatSelectModule,
   ],
   exports:[
     MatCardModule,
     RouterModule,
+    FormsModule,
     MatFormFieldModule,
     MatButtonModule,
     MatInputModule,
@@ -46,6 +51,7 @@ import {MatListModule} from '@angular/material/list';
     MatBadgeModule,
     MatMenuModule,
     MatListModule,
+    MatSelectModule,
   ]
 })
 export class MaterialModule { }

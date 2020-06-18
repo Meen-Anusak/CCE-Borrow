@@ -7,4 +7,8 @@
         <span matLine>ผู้ใช้งาน</span>
         <mat-icon mat-list-icon>group</mat-icon>
     </a>
+    <a mat-list-item [routerLink]="['/',AppURL.Authen,AuthenURL.createUser]" routerLinkActive="a">
+        <span matLine>เพิ่มผู้ใช้งาน</span>
+        <mat-icon mat-list-icon>group_add</mat-icon>
+    </a>
 </mat-nav-list>

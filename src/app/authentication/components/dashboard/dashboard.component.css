@@ -1,0 +1,52 @@
+.box-card {
+    border-radius: 20px;
+    height: 5.5rem;
+    width: 5.5rem;
+    position: absolute;
+    transform: translate(-10%, -30%);
+}
+
+.text-box {
+    margin-left: 110px;
+}
+
+.card-h {
+    margin-top: 50px;
+}
+
+mat-card {
+    border-radius: 50px;
+    color: white;
+    font-size: larger;
+    font-weight: 900;
+}
+
+.card-1 {
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 20px 20px -7px rgba(255, 152, 0, .4) !important;
+    background: linear-gradient(60deg, #ffa726, #fb8c00);
+    width: 230px;
+}
+
+.card-2 {
+    background: linear-gradient(60deg, #ef5350, #e53935);
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 20px 20px -5px rgba(244, 67, 54, .4) !important;
+    width: 230px;
+}
+
+.card-3 {
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 20px 20px -5px rgba(0, 188, 212, .4) !important;
+    background: linear-gradient(60deg, #26c6da, #00acc1);
+    width: 230px;
+}
+
+.card-4 {
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 20px 20px -5px rgba(76, 175, 80, .4) !important;
+    background: linear-gradient(60deg, #66bb6a, #43a047);
+    width: 230px;
+}
+
+@media(max-width:600px) {
+    .card-1 {
+        width: 100%;
+    }
+}

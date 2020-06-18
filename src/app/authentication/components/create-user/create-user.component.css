@@ -1,0 +1,23 @@
+img {
+    width: 250px;
+    height: 250px;
+}
+
+mat-card {
+    padding: 30px 30px 30px 30px;
+    box-shadow: 3px 3px 3px 3px #cd2631a6 !important;
+}
+
+button {
+    background-color: #c2282f;
+    color: white;
+}
+
+[type="file"] {
+    display: none;
+}
+
+#b-d {
+    background-color: white;
+    color: #c2282f;
+}
