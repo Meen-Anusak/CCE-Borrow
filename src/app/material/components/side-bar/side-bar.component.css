@@ -1,9 +1,9 @@
 mat-sidenav {
     width: 220px;
-    background-color: #cd2631f6;
+    background-color: #89161b;
     /* color: white; */
     border-radius: 115px 115px 1px 1px;
-    box-shadow: 5px -1px 20px 5px #cd2631a6;
+    box-shadow: 3px -1px 10px 3px #cd2631a6;
     margin-top: 10px;
     border-right-style: none;
     position: fixed;

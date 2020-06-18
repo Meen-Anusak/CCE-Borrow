@@ -1,5 +1,6 @@
 mat-toolbar {
     color: #cd2632;
+    box-shadow: 5px -1px 2px 2px #cd2631a6;
 }
 
 .img {
@@ -11,4 +12,11 @@ mat-toolbar {
     border-left: 1px solid #cd263196;
     height: 15px;
     margin: 0 10px;
+}
+
+.avatar {
+    object-fit: cover;
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 1px solid #747fc1;
 }
