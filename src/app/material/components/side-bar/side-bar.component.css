@@ -15,8 +15,9 @@ mat-sidenav {
     margin-bottom: 20px;
 }
 
-
-/* img {
-    width: 200px;
-    height: 210px;
-} */
+.b {
+    height: 100vh;
+    background-color: rgba(238, 238, 238, 0.37);
+    z-index: -1;
+    margin-top: 2px;
+}
