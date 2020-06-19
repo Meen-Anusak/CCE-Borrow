@@ -9,6 +9,10 @@ mat-sidenav {
     position: fixed;
 }
 
+mat-sidenav-container {
+    background-color: white;
+}
+
 .img {
     /* background-color: white;
   border-radius: 115px 115px 115px 115px;
@@ -20,6 +24,7 @@ mat-sidenav {
 .b {
     height: 100vh;
     background-color: rgba(238, 238, 238, 0.37);
+    /* background-color: #eee; */
     z-index: -1;
     margin-top: 2px;
 }

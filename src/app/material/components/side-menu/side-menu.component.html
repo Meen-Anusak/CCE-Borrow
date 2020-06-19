@@ -11,4 +11,12 @@
         <span matLine>เพิ่มผู้ใช้งาน</span>
         <mat-icon mat-list-icon>group_add</mat-icon>
     </a>
+    <a mat-list-item [routerLink]="['/',AppURL.Authen,AuthenURL.Product]" routerLinkActive="a">
+        <span matLine>อุปกรณ์</span>
+        <mat-icon mat-list-icon>storage</mat-icon>
+    </a>
+    <a mat-list-item [routerLink]="['/',AppURL.Authen,AuthenURL.createProduct]" routerLinkActive="a">
+        <span matLine>เพิ่มอุปกรณ์</span>
+        <mat-icon mat-list-icon>playlist_add</mat-icon>
+    </a>
 </mat-nav-list>

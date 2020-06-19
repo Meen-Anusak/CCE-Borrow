@@ -1,13 +1,59 @@
-.box-card {
-    border-radius: 20px;
+.box-card1 {
+    border-radius: 5px;
     height: 5.5rem;
     width: 5.5rem;
     position: absolute;
-    transform: translate(-10%, -30%);
+    transform: translate(-3%, -30%);
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 20px 20px -7px rgba(255, 152, 0, .4) !important;
+    background: linear-gradient(60deg, #ffa726, #fb8c00);
+}
+
+.box-card2 {
+    border-radius: 5px;
+    height: 5.5rem;
+    width: 5.5rem;
+    position: absolute;
+    transform: translate(-3%, -30%);
+    background: linear-gradient(60deg, #ef5350, #e53935);
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 20px 20px -5px rgba(244, 67, 54, .4) !important;
+}
+
+.box-card3 {
+    border-radius: 5px;
+    height: 5.5rem;
+    width: 5.5rem;
+    position: absolute;
+    transform: translate(-3%, -30%);
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 20px 20px -5px rgba(0, 188, 212, .4) !important;
+    background: linear-gradient(60deg, #26c6da, #00acc1);
+}
+
+.box-card4 {
+    border-radius: 5px;
+    height: 5.5rem;
+    width: 5.5rem;
+    position: absolute;
+    transform: translate(-3%, -30%);
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 20px 20px -5px rgba(76, 175, 80, .4) !important;
+    background: linear-gradient(60deg, #66bb6a, #43a047);
+}
+
+img {
+    width: 3.5rem;
+    height: 3.5rem;
+    position: absolute;
+    transform: translate(27%, 25%);
 }
 
 .text-box {
-    margin-left: 110px;
+    margin-left: 90px;
+    margin-top: -10px;
+    color: #999999;
+}
+
+.text-box .dt {
+    color: #3c4858;
+    font-size: larger;
 }
 
 .card-h {
@@ -15,34 +61,38 @@
 }
 
 mat-card {
-    border-radius: 50px;
-    color: white;
+    border: 50px;
+    color: rgb(163, 163, 163);
     font-size: larger;
     font-weight: 900;
 }
 
 .card-1 {
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .14) !important;
+    background-color: white;
+    height: 100px;
     box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 20px 20px -7px rgba(255, 152, 0, .4) !important;
-    background: linear-gradient(60deg, #ffa726, #fb8c00);
-    width: 230px;
 }
 
 .card-2 {
-    background: linear-gradient(60deg, #ef5350, #e53935);
-    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 20px 20px -5px rgba(244, 67, 54, .4) !important;
-    width: 230px;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .14) !important;
+    background-color: white;
+    height: 100px;
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 20px 20px -5px rgba(76, 175, 80, .4) !important;
 }
 
 .card-3 {
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .14) !important;
+    background-color: white;
+    height: 100px;
     box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 20px 20px -5px rgba(0, 188, 212, .4) !important;
-    background: linear-gradient(60deg, #26c6da, #00acc1);
-    width: 230px;
 }
 
 .card-4 {
-    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 20px 20px -5px rgba(76, 175, 80, .4) !important;
-    background: linear-gradient(60deg, #66bb6a, #43a047);
-    width: 230px;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .14) !important;
+    background-color: white;
+    height: 100px;
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 20px 20px -5px rgba(244, 67, 54, .4) !important;
 }
 
 @media(max-width:600px) {

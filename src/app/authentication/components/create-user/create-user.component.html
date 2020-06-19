@@ -57,7 +57,7 @@
                         </div>
                         <div class="">
                             <mat-form-field class="w-100" appearance="outline">
-                                <input ngModel #input maxlength="20" name="password" matInput required type="password">
+                                <input ngModel #input minlength="6" maxlength="20" name="password" matInput required type="password">
                                 <mat-label>รหัสผ่าน</mat-label>
                                 <mat-hint align="end">{{input.value?.length || 0}}/20</mat-hint>
                             </mat-form-field>
