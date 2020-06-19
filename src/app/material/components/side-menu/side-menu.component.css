@@ -1,15 +1,28 @@
 .a {
-    background-color: white;
-    color: #cd2632 !important;
-    border-radius: 30px 1px 1px 30px;
+    background-color: #f44336;
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 7px 10px -5px rgba(244, 67, 54, .4);
+    color: white !important;
+    /* border-radius: 70px 70px 70px 70px; */
+    border-radius: 10px;
+    border: 1px;
+    width: 220px !important;
+    margin: 0 auto;
+    height: 50px !important;
 }
 
 :hover .a {
-    background-color: white;
-    color: #cd2632 !important;
-    border-radius: 30px 1px 1px 30px;
+    background-color: #f44336;
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 7px 10px -5px rgba(244, 67, 54, .4);
+    color: white !important;
+    /* border-radius: 70px 70px 70px 70px; */
+    border-radius: 10px;
+    border: 1px;
+    width: 220px !important;
+    margin: 0 auto;
+    height: 50px !important;
 }
 
 .mat-list-item {
-    color: rgba(255, 251, 251, 0.87);
+    /* color: rgba(255, 251, 251, 0.87); */
+    color: #3c4858;
 }

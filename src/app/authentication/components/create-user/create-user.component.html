@@ -1,9 +1,13 @@
 <app-side-bar>
-    <mat-card class="mt-3">
-        <mat-card-header>
+    <mat-card class="mt-5">
+        <!-- <mat-card-header>
             <mat-card-title>เพื่มผู้ใช้งาน</mat-card-title>
             <mat-card-subtitle>create-user</mat-card-subtitle>
-        </mat-card-header>
+        </mat-card-header> -->
+        <div class="header">
+            <mat-card-title>เพื่มผู้ใช้งาน</mat-card-title>
+            <mat-card-subtitle style="color: whitesmoke;">create-user</mat-card-subtitle>
+        </div>
         <hr>
         <mat-card-content class="mt-2">
             <form #formLogin="ngForm" (submit)="onSubmit(formLogin)">
