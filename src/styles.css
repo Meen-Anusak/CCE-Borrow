@@ -14,3 +14,9 @@ body {
 :focus:focus {
     outline: none;
 }
+
+.name-compo {
+    color: #555;
+    margin-top: 0px;
+    font-weight: 100;
+}

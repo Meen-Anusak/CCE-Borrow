@@ -8,6 +8,7 @@ mat-card {
     /* box-shadow: 3px 3px 3px 3px #cd2631a6 !important; */
     box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 20px 20px -5px rgba(76, 175, 80, .4) !important;
     /* background: linear-gradient(60deg, #66bb6a, #43a047); */
+    margin-top: 80px;
 }
 
 button {
@@ -39,7 +40,32 @@ button {
 
 @media(max-width:600px) {
     .header {
+        width: 330px;
+        transform: translate(-5%, -80%);
+    }
+}
+
+@media(max-width:400px) {
+    .header {
         width: 300px;
         transform: translate(-5%, -80%);
     }
+}
+
+
+/* @media(min-width:600px) {
+    .header {
+        width: 1100px;
+        transform: translate(5%, -80%);
+    }
+} */
+
+.ng-tns-c78-1 ng-star-inserted {
+    margin: 0px;
+}
+
+.name-compo {
+    color: #555;
+    margin-top: 0px;
+    font-weight: 100;
 }

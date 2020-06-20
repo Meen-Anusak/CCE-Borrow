@@ -1,5 +1,5 @@
 <mat-toolbar>
-    <div class="">
+    <div *ngIf="!mobileQuery">
         <button (click)="onClicktoggle()" mat-button><mat-icon>menu</mat-icon></button>
     </div>
     <span class="flex-fill"></span>

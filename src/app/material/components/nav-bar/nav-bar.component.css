@@ -1,7 +1,7 @@
 mat-toolbar {
     color: #cd2632;
-    box-shadow: 5px -1px 2px 2px #cd2631a6;
-    background-color: #fff;
+    /* box-shadow: 5px -1px 2px 2px #cd2631a6; */
+    background-color: rgba(238, 238, 238, 0.37);
 }
 
 .img {
