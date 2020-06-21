@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { User } from '../models/user-models';
 import { environment } from 'src/environments/environment';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -13,7 +14,11 @@ export class UsersService {
   ) { }
 
   onAdduser(userModel:User){
-    return this.http.post<any>(`${environment.URL}users`,this.makeFormUser(userModel))
+    return this.http.post<any>(`${environment.URL}users`,this.makeFormUser(userModel));
+  }
+
+  onLogin(loginModel){
+    return this.http.post<any>(`${environment.URL}users/login`,loginModel);
   }
 
   makeFormUser(user:User):FormData{
