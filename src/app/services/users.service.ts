@@ -21,6 +21,14 @@ export class UsersService {
     return this.http.post<any>(`${environment.URL}users/login`,loginModel);
   }
 
+  onGetprofile(accessToken){
+    const Header ={
+      'Authorization': 'Bearer '+ accessToken
+    }
+   return this.http.get<User>(`${environment.URL}users/profile`,{headers:Header}).toPromise() as Promise<User>
+  }
+
+
   makeFormUser(user:User):FormData{
     let formuser = new FormData();
     formuser.append('studentID',user.studentID)

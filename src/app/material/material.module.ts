@@ -17,6 +17,8 @@ import {MatMenuModule} from '@angular/material/menu';
 import { SideMenuComponent } from './components/side-menu/side-menu.component';
 import {MatListModule} from '@angular/material/list';
 import {MatSelectModule} from '@angular/material/select';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 
 
 @NgModule({
@@ -36,6 +38,7 @@ import {MatSelectModule} from '@angular/material/select';
     MatMenuModule,
     MatListModule,
     MatSelectModule,
+    MatSnackBarModule,
   ],
   exports:[
     MatCardModule,
@@ -52,6 +55,7 @@ import {MatSelectModule} from '@angular/material/select';
     MatMenuModule,
     MatListModule,
     MatSelectModule,
+    MatSnackBarModule,
   ]
 })
 export class MaterialModule { }

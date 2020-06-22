@@ -5,6 +5,7 @@ import { AuthenURL } from '../authentication/authen.routing';
 import { NgForm } from '@angular/forms';
 import { UsersService } from '../services/users.service';
 import { AuthenService } from '../services/authen.service';
+import { AlertService } from '../services/alert.service';
 
 @Component({
   selector: 'app-login',
@@ -17,6 +18,7 @@ export class LoginComponent implements OnInit {
     private router: Router,
     private userService : UsersService,
     private authen : AuthenService,
+    private alert : AlertService,
   ) { }
 
   ngOnInit(): void {
@@ -27,11 +29,11 @@ export class LoginComponent implements OnInit {
     this.userService.onLogin(form.value).subscribe(
       res =>{
         this.authen.setAccessToken(res.access_token)
-        console.log(res.message);
+        this.alert.ontify_Success(res.message,2000)
         this.router.navigate(['/',AppURL.Authen,AuthenURL.Dashboard])
 
       }, error =>{
-        console.log(error.error.error.message)
+        this.alert.ontify_Danger_center(error.error.error.message,3000)
       }
     )
   }

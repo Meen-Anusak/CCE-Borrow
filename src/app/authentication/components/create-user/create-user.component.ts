@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { User } from 'src/app/models/user-models';
 import { Role } from 'src/app/interface/user.interface';
 import { UsersService } from 'src/app/services/users.service';
+import { AlertService } from 'src/app/services/alert.service';
 
 @Component({
   selector: 'app-create-user',
@@ -20,12 +21,14 @@ export class CreateUserComponent implements OnInit {
   ];
 
   constructor(
-    private userService: UsersService  ) {}
+    private userService: UsersService,
+    private alert : AlertService,
+      ) {}
 
   ngOnInit(): void {}
 
   onSubmit(formLogin: NgForm) {
-    if (formLogin.invalid) return;
+    if (formLogin.invalid) return this.alert.ontify_Warning('กรุณาป้อนข้อมูลให้ครบถ้วน',3000);
     let user = new User();
     user.studentID = formLogin.value.studentID;
     user.fname = formLogin.value.fname;
@@ -35,11 +38,11 @@ export class CreateUserComponent implements OnInit {
     user.role = formLogin.value.role;
     this.userService.onAdduser(user).subscribe(
       res =>{
-        alert(res.message)
+        this.alert.ontify_Success(res.message,3000)
         window.location.reload()
       },error =>{
-       alert(error.error.error.message)
-        window.location.reload()
+       this.alert.ontify_Warning(error.error.error.message,3000)
+        // window.location.reload()
       }
     )
   }

@@ -13,8 +13,8 @@
         <button mat-icon-button><mat-icon matBadge="5">notifications_none</mat-icon></button>
         <div class="vl"></div>
         <button mat-button [matMenuTriggerFor]="menu">
-          <img  class="avatar rounded-circle" src="assets/images/user.png" alt="">
-          <span class="ml-2">Meen Anusak</span>
+          <img  class="avatar rounded-circle" [src]="image" alt="">
+          <span  class="ml-2">{{fname}} {{lname}}</span>
         </button>
         <mat-menu #menu="matMenu">
             <button mat-menu-item>
