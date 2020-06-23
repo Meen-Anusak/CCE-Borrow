@@ -14,7 +14,7 @@ export class UsersService {
   ) { }
 
   onAdduser(userModel:User){
-    return this.http.post<any>(`${environment.URL}users`,this.makeFormUser(userModel));
+    return this.http.post<any>(`${environment.URL}users`,this.makeFormUser(userModel)).toPromise() as Promise<any>
   }
 
   onLogin(loginModel){
@@ -40,6 +40,20 @@ export class UsersService {
       'Authorization': 'Bearer '+ accessToken
     }
     return this.http.delete<any>(`${environment.URL}users/${id}`,{headers:Header}).toPromise() as Promise<any>
+  }
+
+  onchangePass(model,accessToken){
+    const Header ={
+      'Authorization': 'Bearer '+ accessToken
+    }
+    return this.http.post<any>(`${environment.URL}users/change-pass`,model,{headers:Header}).toPromise() as Promise<any>
+  }
+
+  onUpdateImage(model,accessToken){
+    const Header ={
+      'Authorization': 'Bearer '+ accessToken
+    }
+    return this.http.post<any>(`${environment.URL}users/update-image`,this.makeFormUser(model),{headers:Header}).toPromise() as Promise<any>
   }
 
 

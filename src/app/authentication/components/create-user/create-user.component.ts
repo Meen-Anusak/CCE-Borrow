@@ -36,13 +36,14 @@ export class CreateUserComponent implements OnInit {
     user.password = formLogin.value.password;
     user.image = this.fileImage;
     user.role = formLogin.value.role;
-    this.userService.onAdduser(user).subscribe(
+    this.userService.onAdduser(user).then(
       res =>{
         this.alert.ontify_Success(res.message,3000)
-        window.location.reload()
-      },error =>{
-       this.alert.ontify_Warning(error.error.error.message,3000)
-        // window.location.reload()
+        formLogin.resetForm()
+      }
+    ).catch(
+      error =>{
+        this.alert.ontify_Warning(error.error.error.message,3000)
       }
     )
   }

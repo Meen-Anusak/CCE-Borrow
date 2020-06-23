@@ -2,6 +2,10 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { UsersService } from 'src/app/services/users.service';
 import { AuthenService } from 'src/app/services/authen.service';
 import { NgForm } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { ChangePasswordComponent } from './change-password/change-password.component';
+import { AlertService } from 'src/app/services/alert.service';
+import { User } from 'src/app/models/user-models';
 
 @Component({
   selector: 'app-profile',
@@ -17,7 +21,9 @@ export class ProfileComponent implements OnInit {
 
   constructor(
     private userService : UsersService,
-    private authen : AuthenService
+    private authen : AuthenService,
+    public dialog : MatDialog,
+    private alert : AlertService
   ) { }
 
   ngOnInit(): void {
@@ -25,8 +31,19 @@ export class ProfileComponent implements OnInit {
   }
 
   onSubmit(form){
-    console.log(form.value);
-
+    let user = new User()
+    user.studentID = form.value.studentID;
+    user.fname = form.value.fname;
+    user.lname = form.value.lname;
+    user.password = form.value.password;
+    user.image = this.fileImage;
+    user.role = form.value.role;
+    this.userService.onUpdateImage(user,this.authen.getAccessToken())
+      .then(
+        res =>{
+          this.alert.ontify_Success_center(res.message,3000)
+        }
+      )
   }
 
   onPreviewImage(event) {
@@ -53,9 +70,19 @@ export class ProfileComponent implements OnInit {
           this.formLogin.setValue({studentID,fname,lname,role})
           this.formLogin.controls['studentID'].disable()
           this.formLogin.controls['role'].disable()
+          this.formLogin.controls['fname'].disable()
+          this.formLogin.controls['lname'].disable()
           this.imagePreview = res.image
         }
       )
+  }
+
+  openDialog(){
+    this.dialog.open(ChangePasswordComponent,{
+      width:'500px',
+      height:'400px',
+      disableClose:true
+    })
   }
 
 }
