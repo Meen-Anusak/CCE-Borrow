@@ -6,14 +6,14 @@ img {
 mat-card {
     padding: 30px 30px 30px 30px;
     /* box-shadow: 3px 3px 3px 3px #cd2631a6 !important; */
-    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 20px 20px -5px rgba(76, 175, 80, .4) !important;
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 20px 20px -5px rgba(244, 67, 54, .4) !important;
     /* background: linear-gradient(60deg, #66bb6a, #43a047); */
     margin-top: 80px;
 }
 
 button {
-    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 20px 20px -5px rgba(76, 175, 80, .4) !important;
-    background: linear-gradient(60deg, #66bb6a, #43a047);
+    background: linear-gradient(60deg, #ef5350, #e53935);
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 20px 20px -5px rgba(244, 67, 54, .4) !important;
     color: white;
 }
 
@@ -26,13 +26,13 @@ hr {
 }
 
 #b-d {
-    background-color: #66bb6a;
+    background-color: #ef5350;
     color: whitesmoke;
 }
 
 .header {
-    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 10px 20px -5px rgba(76, 175, 80, .4) !important;
-    background: linear-gradient(60deg, #66bb6a, #43a047);
+    background: linear-gradient(60deg, #ef5350, #e53935);
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 20px 20px -5px rgba(244, 67, 54, .4) !important;
     color: white;
     position: absolute;
     width: 1100px;
@@ -47,6 +47,9 @@ hr {
         width: 330px;
         transform: translate(-5%, -80%);
     }
+    .b-CP {
+        width: 100% !important;
+    }
 }
 
 @media(max-width:400px) {
@@ -54,15 +57,10 @@ hr {
         width: 300px;
         transform: translate(-5%, -80%);
     }
-}
-
-
-/* @media(min-width:600px) {
-    .header {
-        width: 1100px;
-        transform: translate(5%, -80%);
+    .b-CP {
+        width: 100% !important;
     }
-} */
+}
 
 .ng-tns-c78-1 ng-star-inserted {
     margin: 0px;

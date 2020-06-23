@@ -11,3 +11,12 @@ export interface userNav {
   image:any
 }
 
+export interface IUsers {
+  studentID:string;
+  fname:string;
+  lname:string;
+  image?:any;
+  password:string;
+  role:any
+}
+

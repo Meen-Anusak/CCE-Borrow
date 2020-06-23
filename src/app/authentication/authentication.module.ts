@@ -8,10 +8,12 @@ import { UsersComponent } from './components/users/users.component';
 import { CreateUserComponent } from './components/create-user/create-user.component';
 import { ProductComponent } from './components/product/product.component';
 import { CreateProductComponent } from './components/create-product/create-product.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { ChangPasswordComponent } from './components/profile/chang-password/chang-password.component';
 
 
 @NgModule({
-  declarations: [DashboardComponent, UsersComponent, CreateUserComponent, ProductComponent, CreateProductComponent],
+  declarations: [DashboardComponent, UsersComponent, CreateUserComponent, ProductComponent, CreateProductComponent, ProfileComponent, ChangPasswordComponent],
   imports: [
     CommonModule,
     AuthenticationRoutingModule,

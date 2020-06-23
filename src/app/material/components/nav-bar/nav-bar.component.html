@@ -17,7 +17,7 @@
           <span  class="ml-2">{{fname}} {{lname}}</span>
         </button>
         <mat-menu #menu="matMenu">
-            <button mat-menu-item>
+            <button mat-menu-item [routerLink]="['/',AppURL.Authen,AuthenURL.Profile]">
             <mat-icon>person_outline</mat-icon>
             <span>ข้อมูลส่วนตัว</span>
           </button>

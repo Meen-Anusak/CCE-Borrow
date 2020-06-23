@@ -28,6 +28,20 @@ export class UsersService {
    return this.http.get<User>(`${environment.URL}users/profile`,{headers:Header}).toPromise() as Promise<User>
   }
 
+  ongetUser(accessToken){
+    const Header ={
+      'Authorization': 'Bearer '+ accessToken
+    }
+    return this.http.get<any>(`${environment.URL}users`,{headers:Header}).toPromise() as Promise<any>
+    }
+
+  onDelete(id,accessToken){
+    const Header ={
+      'Authorization': 'Bearer '+ accessToken
+    }
+    return this.http.delete<any>(`${environment.URL}users/${id}`,{headers:Header}).toPromise() as Promise<any>
+  }
+
 
   makeFormUser(user:User):FormData{
     let formuser = new FormData();

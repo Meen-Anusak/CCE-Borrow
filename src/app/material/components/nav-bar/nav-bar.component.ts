@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AppURL } from 'src/app/app.routing';
 import { AuthenService } from 'src/app/services/authen.service';
 import { UsersService } from 'src/app/services/users.service';
+import { AuthenURL } from 'src/app/authentication/authen.routing';
 
 
 
@@ -13,6 +14,8 @@ import { UsersService } from 'src/app/services/users.service';
   styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent implements OnInit {
+  AppURL = AppURL;
+  AuthenURL = AuthenURL;
 
   @Input() mobileQuery : boolean
   @Output() sidenavToggle = new EventEmitter();

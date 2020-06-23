@@ -4,4 +4,5 @@ export const AuthenURL = {
   createUser:'create-user',
   Product:'product',
   createProduct:'create-product',
+  Profile:'prodile'
 }

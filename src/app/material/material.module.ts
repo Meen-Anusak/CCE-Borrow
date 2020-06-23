@@ -18,6 +18,9 @@ import { SideMenuComponent } from './components/side-menu/side-menu.component';
 import {MatListModule} from '@angular/material/list';
 import {MatSelectModule} from '@angular/material/select';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatTableModule} from '@angular/material/table';
+import {MatSortModule} from '@angular/material/sort';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 
 
@@ -39,6 +42,9 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatListModule,
     MatSelectModule,
     MatSnackBarModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
   ],
   exports:[
     MatCardModule,
@@ -56,6 +62,9 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatListModule,
     MatSelectModule,
     MatSnackBarModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
   ]
 })
 export class MaterialModule { }

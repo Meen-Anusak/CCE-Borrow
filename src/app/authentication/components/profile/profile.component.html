@@ -1,0 +1,73 @@
+<app-side-bar>
+    <h2 class="name-compo">Profile</h2>
+    <mat-card class="mb-5">
+        <div class="header">
+            <mat-card-title>ข้อมูลส่วนตัว</mat-card-title>
+            <mat-card-subtitle style="color: whitesmoke;">profile</mat-card-subtitle>
+        </div>
+        <hr>
+        <mat-card-content class="mt-4">
+            <form #formLogin="ngForm" (submit)="onSubmit(formLogin)">
+                <div class="text-right changeP">
+                    <button mat-button class=" b-CP text-center">เปลี่ยนรหัสผ่าน</button>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-md-6 d-flex justify-content-center align-items-center">
+                        <div class="text-center">
+                            <div class="" *ngIf="imagePreview">
+                                <img [src]="imagePreview" alt="" class="img-fluid rounded-circle border">
+                                <div class=" ">
+                                    <div class="mt-3 mb-3">
+                                        <button id="b-d" type="button" mat-stroked-button (click)="onDeleteImage()">
+                        <mat-icon>close</mat-icon>
+                        <span>delete</span>
+                      </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <button type="button" mat-stroked-button (click)="image.click()">
+                  <mat-icon>photo</mat-icon>
+                  <span>select image</span>
+                </button>
+                                <input (change)="onPreviewImage($event)" #image type="file" id="" accept="image/*">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="">
+                            <mat-form-field class="w-100" appearance="outline">
+                                <input ngModel name="studentID" matInput required>
+                                <mat-label for="studentID">รหัสนักศึกษา</mat-label>
+                            </mat-form-field>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <mat-form-field class="w-100" appearance="outline">
+                                    <input ngModel name="fname" matInput required>
+                                    <mat-label style="font-size: 12px;">ชื่อจริง</mat-label>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-sm-6">
+                                <mat-form-field class="w-100" appearance="outline">
+                                    <input ngModel name="lname" matInput required>
+                                    <mat-label>นามสกุล</mat-label>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="">
+                            <mat-form-field class="w-100" appearance="outline">
+                                <mat-label style="font-size: 12px;">สิทธิ์ผู้ใช้งาน</mat-label>
+                                <input ngModel #input name="role" matInput required type="text">
+                            </mat-form-field>
+                        </div>
+
+                    </div>
+                </div>
+                <mat-card-actions class="text-right mt-4">
+                    <button mat-button>เพิ่มผู้ใช้งาน</button>
+                </mat-card-actions>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</app-side-bar>
