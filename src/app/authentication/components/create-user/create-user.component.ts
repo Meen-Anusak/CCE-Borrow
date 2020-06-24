@@ -15,9 +15,9 @@ export class CreateUserComponent implements OnInit {
   fileImage: File;
 
   roles: Role[] = [
-    { value: 'Student', viewValue: 'นักศึกษา' },
-    { value: 'Instructor', viewValue: 'อาจารย์' },
-    { value: 'Admin', viewValue: 'ผู้ดูแล' },
+    { value: 'นักศึกษา', viewValue: 'นักศึกษา' },
+    { value: 'อาจารย์', viewValue: 'อาจารย์' },
+    { value: 'ผู้ดูแล', viewValue: 'ผู้ดูแล' },
   ];
 
   constructor(

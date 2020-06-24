@@ -7,6 +7,8 @@ import { CreateUserComponent } from './components/create-user/create-user.compon
 import { ProductComponent } from './components/product/product.component';
 import { CreateProductComponent } from './components/create-product/create-product.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { EditUserComponent } from './components/users/edit-user/edit-user.component';
+
 
 
 const routes: Routes = [
@@ -16,6 +18,7 @@ const routes: Routes = [
 {path:AuthenURL.Product,component:ProductComponent},
 {path:AuthenURL.createProduct,component:CreateProductComponent},
 {path:AuthenURL.Profile,component:ProfileComponent},
+{path:AuthenURL.editUser + '/:id',component:EditUserComponent},
 {path:'**',redirectTo:AuthenURL.Dashboard,}
 ];
 

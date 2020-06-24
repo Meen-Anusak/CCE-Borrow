@@ -56,6 +56,19 @@ export class UsersService {
     return this.http.post<any>(`${environment.URL}users/update-image`,this.makeFormUser(model),{headers:Header}).toPromise() as Promise<any>
   }
 
+  ongetUserById(id,accessToken){
+    const Header ={
+      'Authorization': 'Bearer '+ accessToken
+    }
+    return this.http.get<any>(`${environment.URL}users/${id}`,{headers:Header}).toPromise() as Promise<any>
+  }
+  onupdateUser(id,model,accessToken){
+    const Header ={
+      'Authorization': 'Bearer '+ accessToken
+    }
+    return this.http.put<any>(`${environment.URL}users/${id}`,this.makeFormUser(model),{headers:Header}).toPromise() as Promise<any>
+  }
+
 
   makeFormUser(user:User):FormData{
     let formuser = new FormData();

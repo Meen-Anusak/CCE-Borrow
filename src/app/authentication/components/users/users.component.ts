@@ -7,6 +7,8 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import  Swal  from "sweetalert2";
 import { AlertService } from 'src/app/services/alert.service';
+import { AppURL } from 'src/app/app.routing';
+import { AuthenURL } from '../../authen.routing';
 
 @Component({
   selector: 'app-users',
@@ -14,6 +16,10 @@ import { AlertService } from 'src/app/services/alert.service';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
+
+
+  AppURL = AppURL;
+  AuthenURL = AuthenURL;
 
   Users = new MatTableDataSource<User>();
   tabalColumn = ['studentID','fname','lname','role','createdAt','action']
