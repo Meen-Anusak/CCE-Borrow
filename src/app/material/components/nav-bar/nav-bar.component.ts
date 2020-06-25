@@ -1,9 +1,10 @@
-import { Component, OnInit, Output,EventEmitter, Input } from '@angular/core';
+import { Component, OnInit, Output,EventEmitter, Input, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppURL } from 'src/app/app.routing';
 import { AuthenService } from 'src/app/services/authen.service';
 import { UsersService } from 'src/app/services/users.service';
 import { AuthenURL } from 'src/app/authentication/authen.routing';
+import { Subscription } from 'rxjs';
 
 
 
@@ -13,9 +14,11 @@ import { AuthenURL } from 'src/app/authentication/authen.routing';
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.css']
 })
-export class NavBarComponent implements OnInit {
+export class NavBarComponent implements OnInit  ,OnDestroy{
   AppURL = AppURL;
   AuthenURL = AuthenURL;
+
+  sub:Subscription
 
   @Input() mobileQuery : boolean
   @Output() sidenavToggle = new EventEmitter();
@@ -38,8 +41,8 @@ export class NavBarComponent implements OnInit {
   }
 
   ongetProfile(){
-    this.usersService.onGetprofile(this.authen.getAccessToken())
-      .then(
+   this.sub = this.usersService.onGetprofile(this.authen.getAccessToken())
+      .subscribe(
         res =>{
           this.fname = res.fname;
           this.lname = res.lname;
@@ -55,6 +58,10 @@ export class NavBarComponent implements OnInit {
 
   onClicktoggle(){
     this.sidenavToggle.emit();
+  }
+
+  ngOnDestroy(){
+    this.sub.unsubscribe()
   }
 
 }

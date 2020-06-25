@@ -20,16 +20,14 @@ export class RoleGuard implements CanActivate {
    return new Promise<boolean>((resolve,reject)=>{
     const role:[] = next.data.roles;
     this.userService.onGetprofile(this.authen.getAccessToken())
-    .then(
+    .subscribe(
       res =>{
         if(role.filter(item => item === res.role).length > 0){
           resolve(true)
         }else{
           resolve(false)
         }
-      }
-    )
-    .catch(() => resolve(false))
+      },error  => resolve(false))
     })
    }
 }

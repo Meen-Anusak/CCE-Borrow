@@ -9,13 +9,14 @@ import  Swal  from "sweetalert2";
 import { AlertService } from 'src/app/services/alert.service';
 import { AppURL } from 'src/app/app.routing';
 import { AuthenURL } from '../../authen.routing';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.css']
 })
-export class UsersComponent implements OnInit {
+export class UsersComponent implements OnInit ,OnDestroy {
 
 
   AppURL = AppURL;
@@ -24,6 +25,8 @@ export class UsersComponent implements OnInit {
   Users = new MatTableDataSource<User>();
   tabalColumn = ['studentID','fname','lname','role','createdAt','action']
   textSearch:string;
+
+  sub:Subscription
 
   @ViewChild(MatSort,{static:true}) sort:MatSort
   @ViewChild(MatPaginator,{static:true}) page:MatPaginator
@@ -43,8 +46,8 @@ export class UsersComponent implements OnInit {
   }
 
   getUsers(){
-    this.usersService.ongetUser(this.authen.getAccessToken())
-      .then(
+   this.sub =  this.usersService.ongetUser(this.authen.getAccessToken())
+      .subscribe(
         res =>{
           this.Users.data = res
         }
@@ -75,14 +78,19 @@ export class UsersComponent implements OnInit {
     }).then((result) => {
       if (result.value) {
         this.usersService.onDelete(data._id,this.authen.getAccessToken())
-        .then(
+        .subscribe(
           res =>{
             this.alert.ontify_Success(res.message,3000)
             this.getUsers()
+          },error => {
+            this.alert.ontify_Danger_center(error.error.error.message,3000)
           }
         )
       }
     });
+  }
+  ngOnDestroy(){
+    this.sub.unsubscribe()
   }
 }
 
