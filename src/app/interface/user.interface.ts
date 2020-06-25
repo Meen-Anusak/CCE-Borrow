@@ -20,3 +20,9 @@ export interface IUsers {
   role:any
 }
 
+export const Irole = {
+  admin : 'ผู้ดูแล',
+  instructor:'อาจารย์',
+  student:'นักศึกษา',
+}
+

@@ -10,7 +10,7 @@ mat-sidenav {
 }
 
 mat-sidenav-container {
-    background-color: white;
+    background-color: rgba(238, 238, 238, 0.37);
 }
 
 .img {
@@ -21,12 +21,8 @@ mat-sidenav-container {
     height: 2.5rem;
 }
 
-.b {
-    height: 100vh;
+mat-sidenav-content {
     background-color: rgba(238, 238, 238, 0.37);
-    /* background-color: #eee; */
-    z-index: -1;
-    /* margin-top: 2px; */
 }
 
 .text-box {

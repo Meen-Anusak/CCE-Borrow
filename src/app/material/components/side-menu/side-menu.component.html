@@ -2,15 +2,15 @@
     <a mat-list-item routerLink="" routerLinkActive="" class="am">
         <mat-icon mat-list-icon></mat-icon>
     </a>
-    <a mat-list-item [routerLink]="['/',AppURL.Authen,AuthenURL.Dashboard]" routerLinkActive="a">
+    <a *ngIf="user != role.student" mat-list-item [routerLink]="['/',AppURL.Authen,AuthenURL.Dashboard]" routerLinkActive="a">
         <span matLine>แดชบอร์ด</span>
         <mat-icon mat-list-icon>dashboard</mat-icon>
     </a>
-    <a mat-list-item [routerLink]="['/',AppURL.Authen,AuthenURL.Users]" routerLinkActive="a">
+    <a *ngIf="user != role.student" mat-list-item [routerLink]="['/',AppURL.Authen,AuthenURL.Users]" routerLinkActive="a">
         <span matLine>ผู้ใช้งาน</span>
         <mat-icon mat-list-icon>group</mat-icon>
     </a>
-    <a mat-list-item [routerLink]="['/',AppURL.Authen,AuthenURL.createUser]" routerLinkActive="a">
+    <a *ngIf="user == role.admin" mat-list-item [routerLink]="['/',AppURL.Authen,AuthenURL.createUser]" routerLinkActive="a">
         <span matLine>เพิ่มผู้ใช้งาน</span>
         <mat-icon mat-list-icon>group_add</mat-icon>
     </a>
@@ -18,7 +18,7 @@
         <span matLine>อุปกรณ์</span>
         <mat-icon mat-list-icon>storage</mat-icon>
     </a>
-    <a mat-list-item [routerLink]="['/',AppURL.Authen,AuthenURL.createProduct]" routerLinkActive="a">
+    <a *ngIf="user == role.admin" mat-list-item [routerLink]="['/',AppURL.Authen,AuthenURL.createProduct]" routerLinkActive="a">
         <span matLine>เพิ่มอุปกรณ์</span>
         <mat-icon mat-list-icon>playlist_add</mat-icon>
     </a>

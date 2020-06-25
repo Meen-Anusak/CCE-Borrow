@@ -30,8 +30,11 @@ export class LoginComponent implements OnInit {
       res =>{
         this.authen.setAccessToken(res.access_token)
         this.alert.ontify_Success(res.message,2000)
-        this.router.navigate(['/',AppURL.Authen,AuthenURL.Dashboard])
-
+        if(res.role === 'ผู้ดูแล' || res.role === 'อาจารย์'){
+          this.router.navigate(['/',AppURL.Authen,AuthenURL.Dashboard])
+        }else{
+          this.router.navigate(['/',AppURL.Authen])
+        }
       }, error =>{
         this.alert.ontify_Danger_center(error.error.error.message,3000)
       }

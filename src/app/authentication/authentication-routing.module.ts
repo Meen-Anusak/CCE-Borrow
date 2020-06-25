@@ -8,18 +8,29 @@ import { ProductComponent } from './components/product/product.component';
 import { CreateProductComponent } from './components/create-product/create-product.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { EditUserComponent } from './components/users/edit-user/edit-user.component';
+import { RoleGuard } from '../guards/role.guard';
 
 
 
 const routes: Routes = [
-{path:AuthenURL.Dashboard,component:DashboardComponent},
+  {path:'',redirectTo:AuthenURL.Product,pathMatch:'full'},
+{
+  path:AuthenURL.Dashboard,
+  component:DashboardComponent,
+  canActivate:[RoleGuard],
+  data:{roles:['ผู้ดูแล','อาจารย์']}
+},
 {path:AuthenURL.Users,component:UsersComponent},
-{path:AuthenURL.createUser,component:CreateUserComponent},
+{
+  path:AuthenURL.createUser,
+  component:CreateUserComponent,
+  canActivate:[RoleGuard],
+  data:{roles:['ผู้ดูแล']}
+},
 {path:AuthenURL.Product,component:ProductComponent},
 {path:AuthenURL.createProduct,component:CreateProductComponent},
 {path:AuthenURL.Profile,component:ProfileComponent},
 {path:AuthenURL.editUser + '/:id',component:EditUserComponent},
-{path:'**',redirectTo:AuthenURL.Dashboard,}
 ];
 
 @NgModule({

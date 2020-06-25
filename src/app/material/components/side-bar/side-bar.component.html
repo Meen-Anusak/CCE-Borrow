@@ -1,4 +1,3 @@
-<!-- <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet"> -->
 <mat-sidenav-container fullscreen>
     <mat-sidenav #sidenav [mode]="moBileQueryMax.matches ? 'over':'side'" [opened]="moBileQueryMax.matches ? false:true">
         <div class="text-box">
@@ -14,6 +13,9 @@
         <app-nav-bar [mobileQuery]="moBileQueryMax.matches ? false:true" (sidenavToggle)="sidenav.toggle()"></app-nav-bar>
         <div class="p-4 b">
             <ng-content></ng-content>
+            <!-- <footer class=" h-100 d-flex align-items-end align-self-end">
+                meen
+            </footer> -->
         </div>
     </mat-sidenav-content>
 </mat-sidenav-container>
