@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../models/user-models';
 import { environment } from 'src/environments/environment';
-import { env } from 'process';
 
 
 @Injectable({
@@ -15,7 +14,7 @@ export class UsersService {
   ) { }
 
   onAdduser(userModel:User){
-    return this.http.post<any>(`${environment.URL}users`,this.makeFormUser(userModel)).toPromise() as Promise<any>
+    return this.http.post<any>(`${environment.URL}users`,this.makeFormUser(userModel))
   }
 
   onLogin(loginModel){
@@ -26,48 +25,48 @@ export class UsersService {
     const Header ={
       'Authorization': 'Bearer '+ accessToken
     }
-   return this.http.get<User>(`${environment.URL}users/profile`,{headers:Header}).toPromise() as Promise<User>
+   return this.http.get<User>(`${environment.URL}users/profile`,{headers:Header})
   }
 
   ongetUser(accessToken){
     const Header ={
       'Authorization': 'Bearer '+ accessToken
     }
-    return this.http.get<any>(`${environment.URL}users`,{headers:Header}).toPromise() as Promise<any>
+    return this.http.get<any>(`${environment.URL}users`,{headers:Header})
     }
 
   onDelete(id,accessToken){
     const Header ={
       'Authorization': 'Bearer '+ accessToken
     }
-    return this.http.delete<any>(`${environment.URL}users/${id}`,{headers:Header}).toPromise() as Promise<any>
+    return this.http.delete<any>(`${environment.URL}users/${id}`,{headers:Header})
   }
 
   onchangePass(model,accessToken){
     const Header ={
       'Authorization': 'Bearer '+ accessToken
     }
-    return this.http.post<any>(`${environment.URL}users/change-pass`,model,{headers:Header}).toPromise() as Promise<any>
+    return this.http.post<any>(`${environment.URL}users/change-pass`,model,{headers:Header})
   }
 
   onUpdateImage(model,accessToken){
     const Header ={
       'Authorization': 'Bearer '+ accessToken
     }
-    return this.http.post<any>(`${environment.URL}users/update-image`,this.makeFormUser(model),{headers:Header}).toPromise() as Promise<any>
+    return this.http.post<any>(`${environment.URL}users/update-image`,this.makeFormUser(model),{headers:Header})
   }
 
   ongetUserById(id,accessToken){
     const Header ={
       'Authorization': 'Bearer '+ accessToken
     }
-    return this.http.get<any>(`${environment.URL}users/${id}`,{headers:Header}).toPromise() as Promise<any>
+    return this.http.get<any>(`${environment.URL}users/${id}`,{headers:Header})
   }
   onupdateUser(id,model,accessToken){
     const Header ={
       'Authorization': 'Bearer '+ accessToken
     }
-    return this.http.put<any>(`${environment.URL}users/${id}`,this.makeFormUser(model),{headers:Header}).toPromise() as Promise<any>
+    return this.http.put<any>(`${environment.URL}users/${id}`,this.makeFormUser(model),{headers:Header})
   }
 
 

@@ -39,7 +39,7 @@ export class ProfileComponent implements OnInit {
     user.image = this.fileImage;
     user.role = form.value.role;
     this.userService.onUpdateImage(user,this.authen.getAccessToken())
-      .then(
+      .subscribe(
         res =>{
           this.alert.ontify_Success_center(res.message,3000)
         }
@@ -64,7 +64,7 @@ export class ProfileComponent implements OnInit {
 
   ongetUserProdile(){
     this.userService.onGetprofile(this.authen.getAccessToken())
-      .then(
+      .subscribe(
         res =>{
           let {studentID,fname,lname,role} = res
           this.formLogin.setValue({studentID,fname,lname,role})

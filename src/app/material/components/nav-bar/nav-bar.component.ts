@@ -39,7 +39,7 @@ export class NavBarComponent implements OnInit {
 
   ongetProfile(){
     this.usersService.onGetprofile(this.authen.getAccessToken())
-      .then(
+      .subscribe(
         res =>{
           this.fname = res.fname;
           this.lname = res.lname;

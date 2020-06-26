@@ -48,7 +48,7 @@ export class EditUserComponent implements OnInit {
 
   ongetUser(id){
     this.userService.ongetUserById(id,this.authen.getAccessToken())
-      .then(
+      .subscribe(
         res =>{
           let {studentID,fname,lname,role} = res
           this.imagePreview = res.image
@@ -56,9 +56,7 @@ export class EditUserComponent implements OnInit {
           this.fromEdit.controls['fname'].setValue(fname)
           this.fromEdit.controls['lname'].setValue(lname)
           this.fromEdit.controls['role'].setValue(role)
-        }
-      ).catch(
-        error => {
+        }, error => {
           this.alert.ontify_Danger(error.error.error.message,3000)
         }
       )
@@ -84,13 +82,11 @@ export class EditUserComponent implements OnInit {
       user.role = formEdit.value.role;
     }
     this.userService.onupdateUser(this.id,user,this.authen.getAccessToken())
-      .then(
+      .subscribe(
         res =>{
           this.alert.ontify_Success(res.message,3000)
           this.localtion.back()
-        }
-      ).catch(
-        error =>{
+        }, error =>{
           this.alert.ontify_Danger(error.error.error.message,3000);
         }
       )

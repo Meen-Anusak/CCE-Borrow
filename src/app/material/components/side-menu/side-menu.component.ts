@@ -32,14 +32,14 @@ export class SideMenuComponent implements OnInit {
 
   getRole(){
     this.userService.onGetprofile(this.authen.getAccessToken())
-      .then(
-        res =>  this.user = res.role
-      )
-      .catch(
-        error =>{
-          this.alert.ontify_Danger_center(error.error.error.message)
+      .subscribe(
+        res => {
+           this.user = res.role
+        },error =>{
+          this.alert.ontify_Danger_center(error.error.error.message,3000)
         }
       )
+
   }
 
 }

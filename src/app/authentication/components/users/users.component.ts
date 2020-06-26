@@ -44,7 +44,7 @@ export class UsersComponent implements OnInit {
 
   getUsers(){
     this.usersService.ongetUser(this.authen.getAccessToken())
-      .then(
+      .subscribe(
         res =>{
           this.Users.data = res
         }
@@ -75,7 +75,7 @@ export class UsersComponent implements OnInit {
     }).then((result) => {
       if (result.value) {
         this.usersService.onDelete(data._id,this.authen.getAccessToken())
-        .then(
+        .subscribe(
           res =>{
             this.alert.ontify_Success(res.message,3000)
             this.getUsers()
