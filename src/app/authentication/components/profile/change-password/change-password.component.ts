@@ -31,11 +31,13 @@ export class ChangePasswordComponent implements OnInit {
     const con_pass = form.controls['con_pass'].value;
    if(new_pass === con_pass){
      this.userService.onchangePass(form.value,this.authen.getAccessToken())
-      .subscribe(
+      .then(
         res =>{
           this.alert.ontify_Success_center(res.message,3000)
           this.dialog.closeAll()
-        },error =>{
+        }
+      ).catch(
+        error =>{
           this.alert.ontify_Danger_center(error.error.error.message,3000)
         }
       )

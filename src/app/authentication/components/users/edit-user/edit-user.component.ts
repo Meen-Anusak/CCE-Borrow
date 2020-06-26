@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UsersService } from 'src/app/services/users.service';
 import { AuthenService } from 'src/app/services/authen.service';
@@ -7,21 +7,18 @@ import { NgForm } from '@angular/forms';
 import { Role } from 'src/app/interface/user.interface';
 import { User } from 'src/app/models/user-models';
 import { Location } from '@angular/common';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-edit-user',
   templateUrl: './edit-user.component.html',
   styleUrls: ['./edit-user.component.css']
 })
-export class EditUserComponent implements OnInit,OnDestroy {
+export class EditUserComponent implements OnInit {
 
   @ViewChild('formEdit',{static:true}) fromEdit :NgForm
 
   imagePreview: string | ArrayBuffer;
   fileImage: File;
-
-  sub : Subscription
 
   id:any
 
@@ -50,8 +47,8 @@ export class EditUserComponent implements OnInit,OnDestroy {
   }
 
   ongetUser(id){
-   this.sub =  this.userService.ongetUserById(id,this.authen.getAccessToken())
-      .subscribe(
+    this.userService.ongetUserById(id,this.authen.getAccessToken())
+      .then(
         res =>{
           let {studentID,fname,lname,role} = res
           this.imagePreview = res.image
@@ -59,8 +56,10 @@ export class EditUserComponent implements OnInit,OnDestroy {
           this.fromEdit.controls['fname'].setValue(fname)
           this.fromEdit.controls['lname'].setValue(lname)
           this.fromEdit.controls['role'].setValue(role)
-        },error =>{
-          this.alert.ontify_Danger_center(error.error.error.message,3000)
+        }
+      ).catch(
+        error => {
+          this.alert.ontify_Danger(error.error.error.message,3000)
         }
       )
   }
@@ -85,12 +84,14 @@ export class EditUserComponent implements OnInit,OnDestroy {
       user.role = formEdit.value.role;
     }
     this.userService.onupdateUser(this.id,user,this.authen.getAccessToken())
-      .subscribe(
+      .then(
         res =>{
           this.alert.ontify_Success(res.message,3000)
           this.localtion.back()
-        },error =>{
-          this.alert.ontify_Danger_center(error.error.error.message,3000)
+        }
+      ).catch(
+        error =>{
+          this.alert.ontify_Danger(error.error.error.message,3000);
         }
       )
   }
@@ -112,10 +113,6 @@ export class EditUserComponent implements OnInit,OnDestroy {
   onDeleteImage() {
     this.imagePreview = '';
     this.fileImage = undefined;
-  }
-
-  ngOnDestroy(){
-    this.sub.unsubscribe()
   }
 
 }

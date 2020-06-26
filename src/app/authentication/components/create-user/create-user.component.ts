@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { User } from 'src/app/models/user-models';
 import { Role } from 'src/app/interface/user.interface';
@@ -10,7 +10,7 @@ import { AlertService } from 'src/app/services/alert.service';
   templateUrl: './create-user.component.html',
   styleUrls: ['./create-user.component.css'],
 })
-export class CreateUserComponent implements OnInit,OnDestroy {
+export class CreateUserComponent implements OnInit {
   imagePreview: string | ArrayBuffer;
   fileImage: File;
 
@@ -20,13 +20,15 @@ export class CreateUserComponent implements OnInit,OnDestroy {
     { value: 'ผู้ดูแล', viewValue: 'ผู้ดูแล' },
   ];
 
-  constructor(private userService: UsersService, private alert: AlertService) {}
+  constructor(
+    private userService: UsersService,
+    private alert : AlertService,
+      ) {}
 
   ngOnInit(): void {}
 
   onSubmit(formLogin: NgForm) {
-    if (formLogin.invalid)
-      return this.alert.ontify_Warning('กรุณาป้อนข้อมูลให้ครบถ้วน', 3000);
+    if (formLogin.invalid) return this.alert.ontify_Warning('กรุณาป้อนข้อมูลให้ครบถ้วน',3000);
     let user = new User();
     user.studentID = formLogin.value.studentID;
     user.fname = formLogin.value.fname;
@@ -34,12 +36,17 @@ export class CreateUserComponent implements OnInit,OnDestroy {
     user.password = formLogin.value.password;
     user.image = this.fileImage;
     user.role = formLogin.value.role;
-    this.userService.onAdduser(user).subscribe((res) => {
-      this.alert.ontify_Success(res.message, 3000);
-      formLogin.resetForm();
-    },error => this.alert.ontify_Danger_center(error.error.error.message,3000))
+    this.userService.onAdduser(user).then(
+      res =>{
+        this.alert.ontify_Success(res.message,3000)
+        formLogin.resetForm()
+      }
+    ).catch(
+      error =>{
+        this.alert.ontify_Warning(error.error.error.message,3000)
+      }
+    )
   }
-
 
   onPreviewImage(event) {
     const metaImage = event.target.files[0];
@@ -55,9 +62,5 @@ export class CreateUserComponent implements OnInit,OnDestroy {
   onDeleteImage() {
     this.imagePreview = '';
     this.fileImage = undefined;
-  }
-
-  ngOnDestroy(){
-
   }
 }

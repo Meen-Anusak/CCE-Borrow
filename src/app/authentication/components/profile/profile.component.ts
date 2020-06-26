@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { UsersService } from 'src/app/services/users.service';
 import { AuthenService } from 'src/app/services/authen.service';
 import { NgForm } from '@angular/forms';
@@ -6,21 +6,18 @@ import { MatDialog } from '@angular/material/dialog';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { AlertService } from 'src/app/services/alert.service';
 import { User } from 'src/app/models/user-models';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
-export class ProfileComponent implements OnInit ,OnDestroy {
+export class ProfileComponent implements OnInit {
 
   @ViewChild('formLogin',{static:true}) formLogin:NgForm;
 
   imagePreview: string | ArrayBuffer;
   fileImage: File;
-
-  sub:Subscription
 
   constructor(
     private userService : UsersService,
@@ -42,7 +39,7 @@ export class ProfileComponent implements OnInit ,OnDestroy {
     user.image = this.fileImage;
     user.role = form.value.role;
     this.userService.onUpdateImage(user,this.authen.getAccessToken())
-      .subscribe(
+      .then(
         res =>{
           this.alert.ontify_Success_center(res.message,3000)
         }
@@ -66,8 +63,8 @@ export class ProfileComponent implements OnInit ,OnDestroy {
   }
 
   ongetUserProdile(){
-  this.sub = this.userService.onGetprofile(this.authen.getAccessToken())
-      .subscribe(
+    this.userService.onGetprofile(this.authen.getAccessToken())
+      .then(
         res =>{
           let {studentID,fname,lname,role} = res
           this.formLogin.setValue({studentID,fname,lname,role})
@@ -76,8 +73,6 @@ export class ProfileComponent implements OnInit ,OnDestroy {
           this.formLogin.controls['fname'].disable()
           this.formLogin.controls['lname'].disable()
           this.imagePreview = res.image
-        },error =>{
-          this.alert.ontify_Danger_center(error.error.error.message,3000)
         }
       )
   }
@@ -88,9 +83,6 @@ export class ProfileComponent implements OnInit ,OnDestroy {
       height:'400px',
       disableClose:true
     })
-  }
-  ngOnDestroy(){
-    this.sub.unsubscribe()
   }
 
 }
