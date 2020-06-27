@@ -70,7 +70,7 @@ export class UsersService {
   }
 
 
-  makeFormUser(user:User):FormData{
+  private makeFormUser(user:User):FormData{
     let formuser = new FormData();
     formuser.append('studentID',user.studentID)
     formuser.append('fname',user.fname)
@@ -78,6 +78,7 @@ export class UsersService {
     formuser.append('image',user.image)
     formuser.append('password',user.password)
     formuser.append('role',user.role)
+
     return formuser
   }
 }

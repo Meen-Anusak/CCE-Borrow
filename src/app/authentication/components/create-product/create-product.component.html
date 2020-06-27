@@ -12,7 +12,7 @@
                     <div class="col-md-6 d-flex justify-content-center align-items-center">
                         <div class="text-center">
                             <div class="" *ngIf="imagePreview">
-                                <img [src]="imagePreview" alt="" class="img-fluid rounded-circle border">
+                                <img [src]="imagePreview" alt="" class="img-fluid  border">
                                 <div class=" ">
                                     <div class="mt-3 mb-3">
                                         <button id="b-d" type="button" mat-stroked-button (click)="onDeleteImage()">
@@ -62,7 +62,7 @@
                     <div class="w-100 m-4">
                         <mat-form-field class="w-100" appearance="outline">
                             <mat-label>รายละเอียด</mat-label>
-                            <textarea ngModel matInput name="datail" id="" cols="30" rows="10">
+                            <textarea ngModel matInput name="detail" id="detail" cols="30" rows="10">
 
                           </textarea>
                         </mat-form-field>
