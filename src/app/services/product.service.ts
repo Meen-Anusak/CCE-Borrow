@@ -16,7 +16,11 @@ export class ProductService {
     const Header ={
       'Authorization': 'Bearer '+ accessToken
     }
-    return this.http.post<any>(`${environment.URL}product`,this.makeFormProduct(model),{headers:Header})
+    return this.http.post<any>(`${environment.URL}product`,this.makeFormProduct(model),{headers:Header});
+  }
+
+  onGetProduct(){
+    return this.http.get<any>(`${environment.URL}product`);
   }
 
 
