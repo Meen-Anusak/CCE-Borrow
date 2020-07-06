@@ -59,16 +59,14 @@
                             </div>
                         </div>
                     </div>
-                    <div class="w-100 m-4">
-                        <mat-form-field class="w-100" appearance="outline">
-                            <mat-label>รายละเอียด</mat-label>
-                            <textarea ngModel matInput name="detail" id="detail" cols="30" rows="10">
-
-                          </textarea>
-                        </mat-form-field>
+                    <div class="w-100 m-4 mt-3">
+                        <span class="mb-3">รายละเอียด</span>
+                        <ckeditor ngModel name="detail"></ckeditor>
                     </div>
+
                 </div>
-                <mat-card-actions class="text-right mt-4">
+                <mat-card-actions class="text-right mt-4 d-flex justify-content-between">
+                    <button type="button" mat-button>กลับ</button>
                     <button mat-button>เพิ่มอุปกรณ์</button>
                 </mat-card-actions>
             </form>

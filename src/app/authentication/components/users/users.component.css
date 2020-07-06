@@ -8,6 +8,12 @@ th.mat-header-cell {
     font-size: large;
 }
 
+.add-b {
+    color: white;
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 20px 20px -5px rgba(76, 175, 80, .4) !important;
+    background: linear-gradient(60deg, #66bb6a, #43a047);
+}
+
 mat-card {
     padding: 30px 30px 30px 30px;
     /* box-shadow: 3px 3px 3px 3px #cd2631a6 !important; */
@@ -39,6 +45,9 @@ mat-card {
     th.mat-header-cell {
         font-size: small !important;
         min-width: 100px;
+    }
+    .add-b {
+        width: 100%;
     }
 }
 

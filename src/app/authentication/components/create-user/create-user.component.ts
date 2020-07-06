@@ -4,6 +4,7 @@ import { User } from 'src/app/models/user-models';
 import { Role } from 'src/app/interface/user.interface';
 import { UsersService } from 'src/app/services/users.service';
 import { AlertService } from 'src/app/services/alert.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-create-user',
@@ -23,6 +24,7 @@ export class CreateUserComponent implements OnInit {
   constructor(
     private userService: UsersService,
     private alert : AlertService,
+    private location : Location,
       ) {}
 
   ngOnInit(): void {}
@@ -60,5 +62,9 @@ export class CreateUserComponent implements OnInit {
   onDeleteImage() {
     this.imagePreview = '';
     this.fileImage = undefined;
+  }
+
+  onBack(){
+    this.location.back();
   }
 }

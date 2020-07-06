@@ -24,6 +24,11 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatDialogModule} from '@angular/material/dialog';
 
 
+import { CKEditorModule } from 'ckeditor4-angular';
+
+
+
+
 
 @NgModule({
   declarations: [NavBarComponent, SideBarComponent, SideMenuComponent],
@@ -47,6 +52,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatSortModule,
     MatPaginatorModule,
     MatDialogModule,
+    CKEditorModule,
   ],
   exports:[
     MatCardModule,
@@ -68,6 +74,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatSortModule,
     MatPaginatorModule,
     MatDialogModule,
+    CKEditorModule,
   ]
 })
 export class MaterialModule { }

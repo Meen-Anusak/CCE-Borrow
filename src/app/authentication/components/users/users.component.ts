@@ -10,6 +10,7 @@ import { AlertService } from 'src/app/services/alert.service';
 import { AppURL } from 'src/app/app.routing';
 import { AuthenURL } from '../../authen.routing';
 import {  Irole } from 'src/app/interface/user.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-users',
@@ -35,6 +36,7 @@ export class UsersComponent implements OnInit {
     private usersService : UsersService,
     private authen : AuthenService,
     private alert : AlertService,
+    private router : Router
   ) {
 
   }
@@ -42,7 +44,8 @@ export class UsersComponent implements OnInit {
   ngOnInit(): void {
     this.Users.sort = this.sort
     this.Users.paginator = this.page
-    this.getUsers()
+    this.getUsers();
+    this.getRole();
   }
 
   getRole(){
@@ -62,6 +65,10 @@ export class UsersComponent implements OnInit {
           this.Users.data = res
         }
       )
+  }
+
+  onClickAddUser(){
+    this.router.navigate(['/',AppURL.Authen,AuthenURL.createUser])
   }
 
   search(event:Event){

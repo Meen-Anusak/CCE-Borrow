@@ -10,10 +10,10 @@
         <span matLine>ผู้ใช้งาน</span>
         <mat-icon mat-list-icon>group</mat-icon>
     </a>
-    <a *ngIf="user == role.admin" mat-list-item [routerLink]="['/',AppURL.Authen,AuthenURL.createUser]" routerLinkActive="a">
+    <!-- <a *ngIf="user == role.admin" mat-list-item [routerLink]="['/',AppURL.Authen,AuthenURL.createUser]" routerLinkActive="a">
         <span matLine>เพิ่มผู้ใช้งาน</span>
         <mat-icon mat-list-icon>group_add</mat-icon>
-    </a>
+    </a> -->
     <a mat-list-item [routerLink]="['/',AppURL.Authen,AuthenURL.Product]" routerLinkActive="a">
         <span matLine>อุปกรณ์</span>
         <mat-icon mat-list-icon>storage</mat-icon>

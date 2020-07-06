@@ -30,11 +30,11 @@ export class NavBarComponent implements OnInit {
     private authen : AuthenService,
     private usersService : UsersService,
   ) {
-    this.ongetProfile()
+
    }
 
   ngOnInit(): void {
-
+    this.ongetProfile()
   }
 
   ongetProfile(){
@@ -47,6 +47,8 @@ export class NavBarComponent implements OnInit {
         }
       )
   }
+
+
 
   onLogout(){
     this.authen.clearToken()
