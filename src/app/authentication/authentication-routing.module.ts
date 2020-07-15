@@ -9,6 +9,7 @@ import { CreateProductComponent } from './components/create-product/create-produ
 import { ProfileComponent } from './components/profile/profile.component';
 import { EditUserComponent } from './components/users/edit-user/edit-user.component';
 import { RoleGuard } from '../guards/role.guard';
+import { ProductListComponent } from './components/product-list/product-list.component';
 
 
 
@@ -26,6 +27,14 @@ const routes: Routes = [
   component:CreateUserComponent,
   canActivate:[RoleGuard],
   data:{roles:['ผู้ดูแล']}
+},
+{
+  path:AuthenURL.ProductList,
+  component:ProductListComponent,
+  // canActivate:[RoleGuard],
+  // data:{role:['ผู้ดูแล','อาจารย์']}},
+  canActivate:[RoleGuard],
+  data:{roles:['ผู้ดูแล','อาจารย์']}
 },
 {path:AuthenURL.Product,component:ProductComponent},
 {path:AuthenURL.createProduct,component:CreateProductComponent},

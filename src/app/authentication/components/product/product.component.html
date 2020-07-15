@@ -1,3 +1,37 @@
 <app-side-bar>
     <h2 class="name-compo">Product</h2>
+
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="">
+                <mat-form-field class="w-100" appearance="outline">
+                    <mat-label>ค้นหาอุปกรณ์</mat-label>
+                    <input matInput placeholder="ชื่ออุปกรณ์">
+                    <mat-icon matSuffix>search</mat-icon>
+                </mat-form-field>
+            </div>
+            <hr>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2" *ngFor="let product of products">
+            <mat-card class="example-card mt-3 mb-3">
+                <img mat-card-image [src]="product.image" alt="Photo of a Shiba Inu">
+                <mat-card-content>
+                    <h3>{{product.name_p}}</h3>
+                    <div class="text-center">
+                        <button class="btn btn-sm text-white btn-block" mat-button>ยืม</button>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+    <div class="row mt-5 mb-5">
+        <div class="col-md-12 mx-auto">
+            <mat-paginator class="w-100" [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]">
+            </mat-paginator>
+        </div>
+    </div>
+
 </app-side-bar>
