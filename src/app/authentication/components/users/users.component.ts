@@ -79,9 +79,6 @@ export class UsersComponent implements OnInit {
     this.Users.filter = search.trim()
   }
 
-  clearSearch(){
-    this.textSearch = ''
-  }
 
   onDelete(data){
     Swal.fire({
