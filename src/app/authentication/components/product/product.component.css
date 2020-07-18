@@ -4,15 +4,32 @@
     font-weight: 100;
 }
 
+img {
+    height: 150px;
+}
+
 .btn {
+    width: 45px;
+    height: 30px;
     box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 10px 20px -5px rgba(76, 175, 80, .4) !important;
     background: linear-gradient(60deg, #66bb6a, #43a047);
 }
 
+.col-md-6 {
+    margin: 0;
+    padding: 0;
+}
+
 mat-card {
+    height: 250px;
     box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 20px 20px -5px rgba(0, 188, 212, .4) !important;
 }
 
 mat-paginator {
     box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 20px 20px -5px rgba(0, 188, 212, .4) !important;
+}
+
+.btn-edit {
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 10px 20px -7px rgba(255, 152, 0, .4) !important;
+    background: linear-gradient(60deg, #ffa726, #fb8c00);
 }

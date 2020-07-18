@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Products } from '../models/product-models';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { optionSearch } from '../interface/user.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -19,8 +20,16 @@ export class ProductService {
     return this.http.post<any>(`${environment.URL}product`,this.makeFormProduct(model),{headers:Header});
   }
 
-  onGetProduct(){
-    return this.http.get<any>(`${environment.URL}product`);
+  onGetProduct(startPage?,limitPage?,search?){
+    return this.http.get<any>(`${environment.URL}product/?search=${search}&&page=${startPage}&&size=${limitPage}`);
+  }
+
+  onGetTotal(){
+    return this.http.get<any>(`${environment.URL}product/total`);
+  }
+
+  onGetProductById(id:any){
+    return this.http.get<any>(`${environment.URL}product/${id}`);
   }
 
 

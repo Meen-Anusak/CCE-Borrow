@@ -12,11 +12,13 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { ChangePasswordComponent } from './components/profile/change-password/change-password.component';
 import { EditUserComponent } from './components/users/edit-user/edit-user.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
+import { ShowProductComponent } from './components/product/show-product/show-product.component';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 
 
 
 @NgModule({
-  declarations: [DashboardComponent, UsersComponent, CreateUserComponent, ProductComponent, CreateProductComponent, ProfileComponent, ChangePasswordComponent, EditUserComponent, ProductListComponent,],
+  declarations: [DashboardComponent, UsersComponent, CreateUserComponent, ProductComponent, CreateProductComponent, ProfileComponent, ChangePasswordComponent, EditUserComponent, ProductListComponent, ShowProductComponent, ProductDetailComponent,],
   entryComponents:[ChangePasswordComponent],
   imports: [
     CommonModule,

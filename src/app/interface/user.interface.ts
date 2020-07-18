@@ -26,3 +26,9 @@ export const Irole = {
   student:'นักศึกษา',
 }
 
+export interface optionSearch  {
+  startPage : Number;
+  limitPage : Number;
+  searchText : string
+}
+

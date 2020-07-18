@@ -1,3 +1,65 @@
 <app-side-bar>
-    <h2 class="name-compo">Product-List</h2>
+    <h2 class="name-compo">Product-list</h2>
+    <mat-card class="mb-5">
+        <div class="header">
+            <mat-card-title>รายการอุปกรณ์</mat-card-title>
+            <mat-card-subtitle style="color: whitesmoke;">
+            </mat-card-subtitle>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mt-5">
+                    <button class="add-b w-25" type="button" mat-stroked-button>
+                    <mat-icon>playlist_add</mat-icon>
+                    <span>  เพิ่มอุปกรณ์</span>
+                  </button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="text-right mt-5">
+                    <mat-form-field appearance="legacy" class="w-100">
+                        <mat-label>ค้นหา</mat-label>
+                        <input (keyup)="search($event)" matInput placeholder="รายชื่ออุปกรณ์">
+                        <mat-icon matSuffix>search</mat-icon>
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+        <mat-card-content class="mt-2">
+            <div class="row mt-2 mx-auto table-responsive ">
+                <table matSort mat-table [dataSource]="products" class=" text-center table-hover w-100 ">
+                    <ng-container matColumnDef="image">
+                        <th mat-header-cell *matHeaderCellDef class="text-uppercase text-center"> รูปอุปกรณ์ </th>
+                        <td mat-cell *matCellDef="let image">
+                            <div class=" image over-lay mx-auto d-block ">
+                                <img [src]="image.image" class="w-100 bg-light rounded-top" alt="">
+                            </div>
+                        </td>
+                    </ng-container>
+                    <ng-container matColumnDef="name_p">
+                        <th mat-header-cell *matHeaderCellDef class="text-center"> ชื่ออุปกรณ์ </th>
+                        <td mat-cell *matCellDef="let name" class="text-truncate" style="max-width: 100px;"> {{name.name_p}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="stock">
+                        <th mat-header-cell *matHeaderCellDef class="text-center"> จำนวน </th>
+                        <td mat-cell *matCellDef="let stock"> {{stock.stock}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="action">
+                        <th mat-header-cell *matHeaderCellDef>
+                            <td mat-cell *matCellDef="let data">
+                                <button *ngIf="userRole === role.admin" mat-icon-button type="button"><mat-icon class="text-warning" >dvr</mat-icon></button>
+                                <button *ngIf="userRole === role.admin" (click)="onDelete(data)" mat-icon-button type="button"><mat-icon class="text-danger">clear</mat-icon></button>
+                            </td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="tabalColumn"></tr>
+                    <tr mat-row *matRowDef="let row; columns: tabalColumn;"></tr>
+                </table>
+                <div class="paginator w-100">
+                    <mat-paginator [showFirstLastButtons]="true" [pageSizeOptions]="[5, 10, 25, 100]">
+                    </mat-paginator>
+                </div>
+
+            </div>
+        </mat-card-content>
+    </mat-card>
 </app-side-bar>

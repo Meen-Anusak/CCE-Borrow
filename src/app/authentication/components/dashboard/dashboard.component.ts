@@ -36,7 +36,7 @@ export class DashboardComponent implements OnInit {
   }
 
   getProduct(){
-    this.productService.onGetProduct()
+    this.productService.onGetTotal()
       .subscribe(
         res =>{
           this.Product = res.length

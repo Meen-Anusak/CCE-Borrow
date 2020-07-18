@@ -3,3 +3,77 @@
     margin-top: 0px;
     font-weight: 100;
 }
+
+.nameProduct {
+    width: 50px;
+}
+
+mat-cell.name_p {
+    max-width: 200px !important;
+}
+
+.add-b {
+    color: white;
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 20px 20px -7px rgba(255, 152, 0, .4) !important;
+    background: linear-gradient(60deg, #ffa726, #fb8c00);
+}
+
+.header {
+    background: linear-gradient(60deg, #ec407a, #d81b60);
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 20px 20px -7px rgba(233, 30, 99, .4) !important;
+    color: white;
+    position: absolute;
+    width: 1100px;
+    height: 80px;
+    transform: translate(-1%, -80%);
+    padding: 20px 20px;
+    border-radius: 10px;
+}
+
+mat-card {
+    padding: 30px 30px 30px 30px;
+    /* box-shadow: 3px 3px 3px 3px #cd2631a6 !important; */
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 20px 20px -7px rgba(233, 30, 99, .4) !important;
+    /* background: linear-gradient(60deg, #66bb6a, #43a047); */
+    margin-top: 80px;
+}
+
+th.mat-header-cell {
+    font-size: large;
+    color: #9c27b0;
+}
+
+.over-lay {
+    position: relative;
+    width: 80px;
+    margin: 2px;
+}
+
+.over-lay>img {
+    height: 80px;
+    object-fit: cover;
+}
+
+@media(max-width:600px) {
+    .header {
+        width: 330px;
+        transform: translate(-5%, -70%);
+    }
+    mat-card-content {
+        width: 100% !important;
+    }
+    th.mat-header-cell {
+        font-size: small !important;
+        min-width: 100px;
+    }
+    .add-b {
+        width: 100%;
+    }
+}
+
+@media(max-width:400px) {
+    .header {
+        width: 300px;
+        transform: translate(-5%, -80%);
+    }
+}
