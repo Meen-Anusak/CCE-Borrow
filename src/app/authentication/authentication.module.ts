@@ -14,11 +14,12 @@ import { EditUserComponent } from './components/users/edit-user/edit-user.compon
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { ShowProductComponent } from './components/product/show-product/show-product.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { EditProductComponent } from './components/product-list/edit-product/edit-product.component';
 
 
 
 @NgModule({
-  declarations: [DashboardComponent, UsersComponent, CreateUserComponent, ProductComponent, CreateProductComponent, ProfileComponent, ChangePasswordComponent, EditUserComponent, ProductListComponent, ShowProductComponent, ProductDetailComponent,],
+  declarations: [DashboardComponent, UsersComponent, CreateUserComponent, ProductComponent, CreateProductComponent, ProfileComponent, ChangePasswordComponent, EditUserComponent, ProductListComponent, ShowProductComponent, ProductDetailComponent, EditProductComponent,],
   entryComponents:[ChangePasswordComponent],
   imports: [
     CommonModule,

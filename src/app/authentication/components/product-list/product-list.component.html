@@ -4,12 +4,13 @@
         <div class="header">
             <mat-card-title>รายการอุปกรณ์</mat-card-title>
             <mat-card-subtitle style="color: whitesmoke;">
+                product-list
             </mat-card-subtitle>
         </div>
         <div class="row">
             <div class="col-md-6">
                 <div class="mt-5">
-                    <button class="add-b w-25" type="button" mat-stroked-button>
+                    <button [routerLink]="['/',AppURL.Authen,AuthenURL.createProduct]" class="add-b w-25" type="button" mat-stroked-button>
                     <mat-icon>playlist_add</mat-icon>
                     <span>  เพิ่มอุปกรณ์</span>
                   </button>
@@ -47,7 +48,8 @@
                     <ng-container matColumnDef="action">
                         <th mat-header-cell *matHeaderCellDef>
                             <td mat-cell *matCellDef="let data">
-                                <button *ngIf="userRole === role.admin" mat-icon-button type="button"><mat-icon class="text-warning" >dvr</mat-icon></button>
+                                <button *ngIf="userRole === role.admin" [routerLink]="['/',AppURL.Authen,AuthenURL.productDetail,data._id]" mat-icon-button type="button"><mat-icon class="text-info" >dvr</mat-icon></button>
+                                <button *ngIf="userRole === role.admin" [routerLink]="['/',AppURL.Authen,AuthenURL.editProduct,data._id]" mat-icon-button type="button"><mat-icon class="text-warning" >edit</mat-icon></button>
                                 <button *ngIf="userRole === role.admin" (click)="onDelete(data)" mat-icon-button type="button"><mat-icon class="text-danger">clear</mat-icon></button>
                             </td>
                     </ng-container>

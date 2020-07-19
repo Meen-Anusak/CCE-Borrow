@@ -32,6 +32,13 @@ export class ProductService {
     return this.http.get<any>(`${environment.URL}product/${id}`);
   }
 
+  onUpdateProduct(id:any,model:Products,accessToken:string,){
+    const Header ={
+      'Authorization': 'Bearer '+ accessToken
+    }
+    return this.http.put<any>(`${environment.URL}product/${id}`,this.makeFormProduct(model),{headers:Header});
+  }
+
 
 
   private makeFormProduct(product:Products):FormData{

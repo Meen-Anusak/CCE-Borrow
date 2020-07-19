@@ -7,4 +7,6 @@ export const AuthenURL = {
   Profile:'profile',
   editUser:'edit-user',
   ProductList:'product-list',
+  editProduct:'edit-product',
+  productDetail:'product-detail'
 }

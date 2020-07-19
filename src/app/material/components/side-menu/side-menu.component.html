@@ -18,10 +18,6 @@
         <span matLine>อุปกรณ์</span>
         <mat-icon mat-list-icon>category</mat-icon>
     </a>
-    <a *ngIf="user == role.admin" mat-list-item [routerLink]="['/',AppURL.Authen,AuthenURL.createProduct]" routerLinkActive="a">
-        <span matLine>เพิ่มอุปกรณ์</span>
-        <mat-icon mat-list-icon>playlist_add</mat-icon>
-    </a>
     <a *ngIf="user != role.student" mat-list-item [routerLink]="['/',AppURL.Authen,AuthenURL.ProductList]" routerLinkActive="a">
         <span matLine>รายการอุปกรณ์</span>
         <mat-icon mat-list-icon>storage</mat-icon>

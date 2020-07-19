@@ -59,7 +59,6 @@ export class ProductListComponent implements OnInit {
     this.productService.onGetTotal()
       .subscribe(res =>{
         this.products.data = res
-        console.log(res)
       })
   }
 
@@ -70,6 +69,11 @@ export class ProductListComponent implements OnInit {
          this.userRole = res.role
         }
       )
+  }
+
+  onEdit(data){
+    console.log(data._id);
+
   }
 
   onDelete(data){

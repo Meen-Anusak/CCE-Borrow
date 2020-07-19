@@ -10,6 +10,8 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { EditUserComponent } from './components/users/edit-user/edit-user.component';
 import { RoleGuard } from '../guards/role.guard';
 import { ProductListComponent } from './components/product-list/product-list.component';
+import { EditProductComponent } from './components/product-list/edit-product/edit-product.component';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 
 
 
@@ -31,8 +33,6 @@ const routes: Routes = [
 {
   path:AuthenURL.ProductList,
   component:ProductListComponent,
-  // canActivate:[RoleGuard],
-  // data:{role:['ผู้ดูแล','อาจารย์']}},
   canActivate:[RoleGuard],
   data:{roles:['ผู้ดูแล','อาจารย์']}
 },
@@ -40,6 +40,8 @@ const routes: Routes = [
 {path:AuthenURL.createProduct,component:CreateProductComponent},
 {path:AuthenURL.Profile,component:ProfileComponent},
 {path:AuthenURL.editUser + '/:id',component:EditUserComponent},
+{path:AuthenURL.editProduct+'/:id',component:EditProductComponent},
+{path:AuthenURL.productDetail+'/:id',component:ProductDetailComponent},
 ];
 
 @NgModule({
