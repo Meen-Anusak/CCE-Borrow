@@ -1,0 +1,22 @@
+.name-compo {
+    color: #555;
+    margin-top: 0px;
+    font-weight: 100;
+}
+
+.over-lay {
+    position: relative;
+    width: 80px;
+    margin: 2px;
+}
+
+.over-lay>img {
+    height: 80px;
+    object-fit: cover;
+}
+
+mat-card {
+    padding: 30px 30px 30px 30px;
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 20px 20px -7px rgba(255, 152, 0, .4) !important;
+    margin-top: 80px;
+}

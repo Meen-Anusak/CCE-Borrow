@@ -1,0 +1,75 @@
+<app-side-bar>
+    <h2 class="name-compo">Borrow</h2>
+
+    <div class="row mt-4">
+        <div class="col-md-10 mx-auto">
+            <mat-tab-group mat-align-tabs="center" color="accent" class="w-100">
+                <mat-tab>
+                    <ng-template mat-tab-label>
+                        <mat-icon class="example-tab-icon text-warning">ballot</mat-icon>
+                        <span class="text-warning"> &nbsp; รายการอุปกรณ์</span>
+                    </ng-template>
+                    <mat-card class="mt-5 mb-4">
+                        <mat-card-header>
+                            <mat-card-title>
+                                <h1 class="text-center">รายการอุปกรณ์</h1>
+                            </mat-card-title>
+                            <mat-card-subtitle>รายการที่กำลังจะยืม</mat-card-subtitle>
+                        </mat-card-header>
+                        <mat-card-content>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">No.</th>
+                                            <th scope="col">รูปอุปกรณ์</th>
+                                            <th scope="col">ชื่ออุปกรณ์</th>
+                                            <th scope="col">จำนวน</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let item of items let i = index ">
+                                            <th scope="row">{{i +1}}</th>
+                                            <td>
+                                                <div class=" image over-lay d-block ">
+                                                    <img [src]="item.p_id.image" class="w-100 bg-light" alt="">
+                                                </div>
+                                            </td>
+                                            <td>{{item.p_id.name_p}}</td>
+                                            <td>{{item.qty}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </mat-card-content>
+                        <mat-card-actions class="text-right">
+                            <button mat-button> ยืม</button>
+                        </mat-card-actions>
+                    </mat-card>
+
+                </mat-tab>
+                <mat-tab>
+                    <ng-template mat-tab-label>
+                        <mat-icon class="example-tab-icon text-success">unarchive</mat-icon>
+                        <span class="text-success"> &nbsp; ยืม</span>
+                    </ng-template>
+                    <h1 class="text-center mt-5">ยืม</h1>
+                </mat-tab>
+                <mat-tab>
+                    <ng-template mat-tab-label>
+                        <mat-icon class="example-tab-icon text-info">archive</mat-icon>
+                        <span class="text-info"> &nbsp; คืน</span>
+                    </ng-template>
+                    <h1 class="text-center mt-5">คืน</h1>
+                </mat-tab>
+                <mat-tab>
+                    <ng-template mat-tab-label>
+                        <mat-icon class="example-tab-icon text-primary">format_list_bulleted</mat-icon>
+                        <span class="text-primary"> &nbsp; ประวัติการ ยืม / คืน</span>
+                    </ng-template>
+                    <h1 class="text-center mt-5">ประวัติการยืม</h1>
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+    </div>
+</app-side-bar>

@@ -73,7 +73,6 @@ export class ProductListComponent implements OnInit {
 
   onEdit(data){
     console.log(data._id);
-
   }
 
   onDelete(data){

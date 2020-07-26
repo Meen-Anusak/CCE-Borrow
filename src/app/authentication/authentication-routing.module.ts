@@ -12,6 +12,7 @@ import { RoleGuard } from '../guards/role.guard';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { EditProductComponent } from './components/product-list/edit-product/edit-product.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { BorrowComponent } from './components/borrow/borrow.component';
 
 
 
@@ -42,6 +43,7 @@ const routes: Routes = [
 {path:AuthenURL.editUser + '/:id',component:EditUserComponent},
 {path:AuthenURL.editProduct+'/:id',component:EditProductComponent},
 {path:AuthenURL.productDetail+'/:id',component:ProductDetailComponent},
+{path:AuthenURL.Borrow,component:BorrowComponent},
 ];
 
 @NgModule({

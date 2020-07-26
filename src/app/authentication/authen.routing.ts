@@ -8,5 +8,6 @@ export const AuthenURL = {
   editUser:'edit-user',
   ProductList:'product-list',
   editProduct:'edit-product',
-  productDetail:'product-detail'
+  productDetail:'product-detail',
+  Borrow : 'borrow'
 }

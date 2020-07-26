@@ -1,8 +1,11 @@
 import { Component, OnInit, ViewChild, OnChanges, Input } from '@angular/core';
 import { ProductService } from 'src/app/services/product.service';
-import { MatPaginator, PageEvent } from '@angular/material/paginator';
+import { PageEvent } from '@angular/material/paginator';
 import { MatDialog } from '@angular/material/dialog';
 import { ShowProductComponent } from './show-product/show-product.component';
+import { AuthenService } from 'src/app/services/authen.service';
+import { AlertService } from 'src/app/services/alert.service';
+import  Swal  from "sweetalert2";
 
 @Component({
   selector: 'app-product',
@@ -10,9 +13,6 @@ import { ShowProductComponent } from './show-product/show-product.component';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
-
-
-
 
   products =[] ;
   image : string;
@@ -28,6 +28,8 @@ export class ProductComponent implements OnInit {
   constructor(
     private productService : ProductService,
     private dialog : MatDialog,
+    private authen : AuthenService,
+    private alert : AlertService,
   ) {
     this.startPage = 1;
     this.pageSize = 12;
@@ -45,7 +47,7 @@ export class ProductComponent implements OnInit {
 
   pageEvent(even:PageEvent){
     if(even){
-        let page = 1 || 1;
+        let page = 1;
         let limit = even.pageSize || this.pageSize
       page = even.pageIndex +1
 
@@ -73,13 +75,7 @@ export class ProductComponent implements OnInit {
       res =>{
         this.products = res;
     })
-
    }
-
-
-
-
-
 
   search(even:Event){
     if(even){
@@ -88,4 +84,19 @@ export class ProductComponent implements OnInit {
 
   }
 
-}
+ onBorrow(products){
+
+    this.productService.onSaveItem(products,this.authen.getAccessToken())
+      .subscribe(res =>{
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: `${res.message}`,
+          showConfirmButton: false,
+          timer: 1500
+        })
+      })
+  }
+
+  }
+

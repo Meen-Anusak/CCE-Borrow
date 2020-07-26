@@ -40,6 +40,15 @@ export class ProductService {
   }
 
 
+  onSaveItem(model,accessToken){
+    const Header ={
+      'Authorization': 'Bearer '+ accessToken
+    }
+    return this.http.post<any>(`${environment.URL}borrow`,model,{headers:Header});
+  }
+
+
+
 
   private makeFormProduct(product:Products):FormData{
     let formProduct = new FormData();
