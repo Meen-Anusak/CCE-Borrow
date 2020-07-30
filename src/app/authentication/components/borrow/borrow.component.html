@@ -12,7 +12,7 @@
                     <mat-card class="mt-5 mb-4">
                         <mat-card-header>
                             <mat-card-title>
-                                <h1 class="text-center">รายการอุปกรณ์</h1>
+                                <h1 class="text-center text-warning">รายการอุปกรณ์</h1>
                             </mat-card-title>
                             <mat-card-subtitle>รายการที่กำลังจะยืม</mat-card-subtitle>
                         </mat-card-header>
@@ -28,22 +28,49 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr *ngFor="let item of items let i = index ">
-                                            <th scope="row">{{i +1}}</th>
+                                        <tr *ngFor="let item of items let i = index">
+                                            <th class="t" scope="row">{{i +1}}</th>
                                             <td>
                                                 <div class=" image over-lay d-block ">
                                                     <img [src]="item.p_id.image" class="w-100 bg-light" alt="">
                                                 </div>
                                             </td>
-                                            <td>{{item.p_id.name_p}}</td>
-                                            <td>{{item.qty}}</td>
+                                            <td class="text-truncate t">{{item.p_id.name_p}}</td>
+                                            <td class="t">
+                                                <button (click)="onRemove(item.p_id._id)" mat-icon-button class="text-warning">
+                                                <mat-icon>
+                                                  remove
+                                                </mat-icon>
+                                              </button> {{item.qty}}
+                                                <button (click)="onAddItem(item.p_id._id)" mat-icon-button class="text-success">
+                                                <mat-icon>
+                                                  add
+                                                </mat-icon>
+                                              </button>
+                                                <span class="vl"></span>
+                                                <button mat-icon-button class="text-danger">
+                                                <mat-icon>
+                                                  clear
+                                                </mat-icon>
+                                              </button>
+                                            </td>
                                         </tr>
+                                        <tr>
+                                            <th scope="row" style="font-size: large;">รวม</th>
+                                            <td colspan="2"></td>
+                                            <td class="pt-3">0 ชิ้น</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" style="font-size: large;"></th>
+                                            <td colspan="4"></td>
+                                        </tr>
+
                                     </tbody>
                                 </table>
                             </div>
                         </mat-card-content>
                         <mat-card-actions class="text-right">
-                            <button mat-button> ยืม</button>
+                            <button id="button" (click)="onBorrow(items)" mat-button> ยืม</button>
                         </mat-card-actions>
                     </mat-card>
 

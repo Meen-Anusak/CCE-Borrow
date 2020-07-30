@@ -24,4 +24,18 @@ export class Product2Service {
     }
     return this.http.get<any>(`${environment.URL}borrow`,{headers:Header});
   }
+
+  RemoveItem(accessToken,id){
+    const Header ={
+      'Authorization': 'Bearer '+ accessToken
+    }
+    return this.http.post<any>(`${environment.URL}borrow/removeItem`,id,{headers:Header});
+  }
+
+  onDelete(accessToken,id){
+    const Header ={
+      'Authorization': 'Bearer '+ accessToken
+    }
+    return this.http.post<any>(`${environment.URL}borrow/deleteItem`,id,{headers:Header});
+  }
 }
