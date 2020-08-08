@@ -16,6 +16,7 @@ export class BorrowComponent implements OnInit {
 
 
   items = []
+  noItem :boolean = true;
 
   constructor(
     private borrow : Product2Service,
@@ -27,14 +28,14 @@ export class BorrowComponent implements OnInit {
 
   ngOnInit(): void {
     this.getItem()
-
   }
 
   getItem(){
     this.borrow.getItemByUser(this.authen.getAccessToken())
       .subscribe(res =>{
-       this.items = res
-       console.log(res)
+        this.items = res
+      },error =>{
+        this.noItem = false
       })
   }
 
@@ -75,6 +76,10 @@ export class BorrowComponent implements OnInit {
       },error =>{
         console.log(error.message)
       })
+  }
+
+  toItem(){
+    this.router.navigate(['/',AppURL.Authen,AuthenURL.Product])
   }
 
 }
