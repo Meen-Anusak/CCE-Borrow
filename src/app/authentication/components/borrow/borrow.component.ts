@@ -6,7 +6,7 @@ import { Location } from "@angular/common";
 import { Router } from '@angular/router';
 import { AppURL } from 'src/app/app.routing';
 import { AuthenURL } from '../../authen.routing';
-
+import  Swal  from "sweetalert2";
 @Component({
   selector: 'app-borrow',
   templateUrl: './borrow.component.html',
@@ -66,10 +66,11 @@ export class BorrowComponent implements OnInit {
       })
   }
 
-  onDelete(id){
+  onDeleteItem(id){
     const data ={
       _id : id
     }
+    console.log(data)
     this.borrow.onDelete(this.authen.getAccessToken(),data)
       .subscribe(res =>{
         this.alert.ontify_Danger(res.message,3000)
@@ -84,8 +85,24 @@ export class BorrowComponent implements OnInit {
   }
 
   onDeleteList(data){
-    
-    console.log(data)
+      Swal.fire({
+        title: 'ต้องการลบใช่หรือไม่?',
+        text: ``,
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'ใช้,ต้องการลบ!',
+      }).then((result) => {
+        if (result.value) {
+          this.borrow.onDeleteList(this.authen.getAccessToken(),data)
+      .subscribe(res =>{
+        this.alert.ontify_Info(res.message,3000);
+        this.getItem()
+      })
+        }
+      });
+    }
   }
 
-}
+

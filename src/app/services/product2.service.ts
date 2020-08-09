@@ -38,4 +38,10 @@ export class Product2Service {
     }
     return this.http.post<any>(`${environment.URL}borrow/deleteItem`,id,{headers:Header});
   }
+  onDeleteList(accessToken,data){
+    const Header ={
+      'Authorization': 'Bearer '+ accessToken
+    }
+    return this.http.post<any>(`${environment.URL}borrow/deleteList`,data,{headers:Header});
+  }
 }
