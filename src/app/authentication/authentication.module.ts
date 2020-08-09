@@ -18,7 +18,6 @@ import { EditProductComponent } from './components/product-list/edit-product/edi
 import { BorrowComponent } from './components/borrow/borrow.component';
 
 
-
 @NgModule({
   declarations: [DashboardComponent, UsersComponent, CreateUserComponent, ProductComponent, CreateProductComponent, ProfileComponent, ChangePasswordComponent, EditUserComponent, ProductListComponent, ShowProductComponent, ProductDetailComponent, EditProductComponent, BorrowComponent,],
   entryComponents:[ChangePasswordComponent],

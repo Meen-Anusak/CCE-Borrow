@@ -45,6 +45,11 @@ td {
     background: linear-gradient(60deg, #66bb6a, #43a047);
     color: white;
 }
+#button1 {
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 20px 20px -5px rgba(244, 67, 54, .4) !important;
+    background: linear-gradient(60deg, #ef5350, #e53935);
+    color: white;
+}
 
 .vl {
     border-left: 1px solid #cd263196;

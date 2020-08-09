@@ -18,6 +18,7 @@ export class BorrowComponent implements OnInit {
   items = []
   noItem :boolean = true;
 
+
   constructor(
     private borrow : Product2Service,
     private authen : AuthenService,
@@ -80,6 +81,11 @@ export class BorrowComponent implements OnInit {
 
   toItem(){
     this.router.navigate(['/',AppURL.Authen,AuthenURL.Product])
+  }
+
+  onDeleteList(data){
+    
+    console.log(data)
   }
 
 }

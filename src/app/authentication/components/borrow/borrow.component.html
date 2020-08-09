@@ -72,7 +72,8 @@
                                 </table>
                             </div>
                         </mat-card-content>
-                        <mat-card-actions class="text-right">
+                        <mat-card-actions class="d-flex justify-content-between">
+                            <button id="button1" (click)="onDeleteList(items)"  mat-button> ลบรายการ</button>
                             <button id="button" (click)="onBorrow(items)" mat-button> ยืม</button>
                         </mat-card-actions>
                     </mat-card>
