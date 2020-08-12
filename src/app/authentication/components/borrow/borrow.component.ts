@@ -17,8 +17,7 @@ export class BorrowComponent implements OnInit {
 
   items = []
   noItem :boolean = true;
-
-
+  total : 0;
   constructor(
     private borrow : Product2Service,
     private authen : AuthenService,
@@ -34,9 +33,11 @@ export class BorrowComponent implements OnInit {
   getItem(){
     this.borrow.getItemByUser(this.authen.getAccessToken())
       .subscribe(res =>{
-        this.items = res
+        this.items = res.data.data_items;
+        this.total = res.data.total;
       },error =>{
         this.noItem = false
+        console.log(error.error.error.message)
       })
   }
 
