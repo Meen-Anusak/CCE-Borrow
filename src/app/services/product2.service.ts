@@ -44,4 +44,18 @@ export class Product2Service {
     }
     return this.http.post<any>(`${environment.URL}borrow/deleteList`,data,{headers:Header});
   }
+
+  onBorrow(accessToken,productId){
+    const Header ={
+      'Authorization': 'Bearer '+ accessToken
+    }
+    return this.http.post<any>(`${environment.URL}borrow/borrow`,productId,{headers:Header});
+  }
+
+  onGetwaitBorrow(accessToken){
+    const Header ={
+      'Authorization': 'Bearer '+ accessToken
+    }
+    return this.http.get<any>(`${environment.URL}borrow/wait-borrow`,{headers:Header});
+  }
 }

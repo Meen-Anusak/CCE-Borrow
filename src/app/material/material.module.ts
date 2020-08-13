@@ -23,7 +23,7 @@ import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatTabsModule} from '@angular/material/tabs';
-
+import {MatExpansionModule} from '@angular/material/expansion';
 
 
 import { CKEditorModule } from 'ckeditor4-angular';
@@ -56,6 +56,7 @@ import { CKEditorModule } from 'ckeditor4-angular';
     MatDialogModule,
     CKEditorModule,
     MatTabsModule,
+    MatExpansionModule,
   ],
   exports:[
     MatCardModule,
@@ -79,6 +80,7 @@ import { CKEditorModule } from 'ckeditor4-angular';
     MatDialogModule,
     CKEditorModule,
     MatTabsModule,
+    MatExpansionModule,
   ]
 })
 export class MaterialModule { }

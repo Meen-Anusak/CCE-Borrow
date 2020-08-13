@@ -74,7 +74,7 @@
                         </mat-card-content>
                         <mat-card-actions class="d-flex justify-content-between">
                             <button id="button1" (click)="onDeleteList(items)"  mat-button> ลบรายการ</button>
-                            <button id="button" (click)="onBorrow(items)" mat-button> ยืม</button>
+                            <button id="button" (click)="onBorrow()" mat-button> ยืม</button>
                         </mat-card-actions>
                     </mat-card>
 
@@ -84,7 +84,8 @@
                         <mat-icon class="example-tab-icon text-success">unarchive</mat-icon>
                         <span class="text-success"> &nbsp; ยืม</span>
                     </ng-template>
-                    <h1 class="text-center mt-5">ยืม</h1>
+                    <h1 class="text-center mt-5">รอการอนุมัติ</h1>
+                    <app-wait-borrow></app-wait-borrow>
                 </mat-tab>
                 <mat-tab>
                     <ng-template mat-tab-label>

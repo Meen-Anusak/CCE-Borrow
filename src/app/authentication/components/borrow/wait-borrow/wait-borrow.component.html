@@ -1,0 +1,43 @@
+<mat-card class="mb-5">
+    <mat-card-header>
+        <mat-card-title>{{user}}</mat-card-title>
+        <mat-card-subtitle>{{studentId}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">No.</th>
+                        <th scope="col">รูปอุปกรณ์</th>
+                        <th scope="col">ชื่ออุปกรณ์</th>
+                        <th scope="col">จำนวน</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of items let i = index">
+                        <th class="t" scope="row">{{i +1}}</th>
+                        <td>
+                            <div class=" image over-lay d-block ">
+                                <img [src]="item.p_id.image" class="w-100 bg-light" alt="">
+                            </div>
+                        </td>
+                        <td class="text-truncate t">{{item.p_id.name_p}}</td>
+                        <td class="t">
+                            {{item.qty}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row" style="font-size: large;">รวม</th>
+                        <td colspan="2"></td>
+                        <td class="pt-3">{{total}} ชิ้น</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button></button>
+    </mat-card-actions>
+</mat-card>

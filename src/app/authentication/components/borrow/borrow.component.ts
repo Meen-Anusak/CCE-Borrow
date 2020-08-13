@@ -18,6 +18,8 @@ export class BorrowComponent implements OnInit {
   items = []
   noItem :boolean = true;
   total : 0;
+  productId:any;
+
   constructor(
     private borrow : Product2Service,
     private authen : AuthenService,
@@ -35,14 +37,22 @@ export class BorrowComponent implements OnInit {
       .subscribe(res =>{
         this.items = res.data.data_items;
         this.total = res.data.total;
+        this.productId = res.data.product_id
       },error =>{
         this.noItem = false
         console.log(error.error.error.message)
       })
   }
 
-  onBorrow(value){
-    console.log(value)
+  onBorrow(){
+    let data ={
+      productId:this.productId
+    }
+    this.borrow.onBorrow(this.authen.getAccessToken(),data)
+      .subscribe(res=>{
+        this.alert.ontify_Success(res.message,3000)
+        this.getItem
+      })
   }
 
   onRemove(id){
@@ -71,7 +81,6 @@ export class BorrowComponent implements OnInit {
     const data ={
       _id : id
     }
-    console.log(data)
     this.borrow.onDelete(this.authen.getAccessToken(),data)
       .subscribe(res =>{
         this.alert.ontify_Danger(res.message,3000)
@@ -97,9 +106,9 @@ export class BorrowComponent implements OnInit {
       }).then((result) => {
         if (result.value) {
           this.borrow.onDeleteList(this.authen.getAccessToken(),data)
-      .subscribe(res =>{
-        this.alert.ontify_Info(res.message,3000);
-        this.getItem()
+            .subscribe(res =>{
+              this.alert.ontify_Info(res.message,3000);
+              this.getItem()
       })
         }
       });
