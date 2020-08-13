@@ -51,7 +51,7 @@ export class BorrowComponent implements OnInit {
     this.borrow.onBorrow(this.authen.getAccessToken(),data)
       .subscribe(res=>{
         this.alert.ontify_Success(res.message,3000)
-        this.getItem
+        this.getItem();
       })
   }
 
@@ -94,7 +94,10 @@ export class BorrowComponent implements OnInit {
     this.router.navigate(['/',AppURL.Authen,AuthenURL.Product])
   }
 
-  onDeleteList(data){
+  onDeleteList(){
+    const data = {
+      _id : this.productId
+    }
       Swal.fire({
         title: 'ต้องการลบใช่หรือไม่?',
         text: ``,

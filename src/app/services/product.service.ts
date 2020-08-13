@@ -40,7 +40,7 @@ export class ProductService {
   }
 
 
-  onSaveItem(model,accessToken){
+  onSaveItem(model,productId,accessToken){
     const Header ={
       'Authorization': 'Bearer '+ accessToken
     }

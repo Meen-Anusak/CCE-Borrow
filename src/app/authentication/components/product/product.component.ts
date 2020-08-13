@@ -6,6 +6,7 @@ import { ShowProductComponent } from './show-product/show-product.component';
 import { AuthenService } from 'src/app/services/authen.service';
 import { AlertService } from 'src/app/services/alert.service';
 import  Swal  from "sweetalert2";
+import { Product2Service } from 'src/app/services/product2.service';
 
 @Component({
   selector: 'app-product',
@@ -23,6 +24,7 @@ export class ProductComponent implements OnInit {
   pageSize = 12;
   pageSizeOption : number[] = [6,12, 24, 100];
 
+  productId:any;
 
 
   constructor(
@@ -30,6 +32,7 @@ export class ProductComponent implements OnInit {
     private dialog : MatDialog,
     private authen : AuthenService,
     private alert : AlertService,
+    private borrow : Product2Service
   ) {
     this.startPage = 1;
     this.pageSize = 12;
@@ -42,7 +45,7 @@ export class ProductComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    
   }
 
   pageEvent(even:PageEvent){
@@ -86,7 +89,7 @@ export class ProductComponent implements OnInit {
 
  onBorrow(products){
 
-    this.productService.onSaveItem(products,this.authen.getAccessToken())
+    this.productService.onSaveItem(products,this.productId,this.authen.getAccessToken())
       .subscribe(res =>{
         Swal.fire({
           position: 'center',
