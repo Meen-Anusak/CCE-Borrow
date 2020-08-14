@@ -1,6 +1,11 @@
-<mat-card class="mb-5">
+<div *ngIf="!onItem" class="text-center mt-5 mb-5">
+    <button mat-flat-button id="button" (click)="getBorrow()">
+        <mat-icon>add</mat-icon> เพิ่มอุปกรณ์
+    </button>
+</div>
+<mat-card *ngIf="onItem" class="mb-5">
     <mat-card-header>
-        <mat-card-title>{{user}}</mat-card-title>
+        <mat-card-title>{{fname}} {{lname}}</mat-card-title>
         <mat-card-subtitle>{{studentId}} </mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
@@ -38,6 +43,6 @@
         </div>
     </mat-card-content>
     <mat-card-actions>
-        <button mat-button></button>
+        <button (click)="onDelete()" id="button1" mat-button><mat-icon>delete</mat-icon></button>
     </mat-card-actions>
 </mat-card>

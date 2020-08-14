@@ -19,14 +19,14 @@ export class BorrowComponent implements OnInit {
   noItem :boolean = true;
   total : 0;
   productId:any;
-
   constructor(
     private borrow : Product2Service,
     private authen : AuthenService,
     private alert : AlertService,
     private location : Location,
     private router : Router
-  ) { }
+  ) {
+   }
 
   ngOnInit(): void {
     this.getItem()
@@ -38,8 +38,9 @@ export class BorrowComponent implements OnInit {
         this.items = res.data.data_items;
         this.total = res.data.total;
         this.productId = res.data.product_id
-      },error =>{
         this.noItem = false
+      },error =>{
+        this.noItem = true;
         console.log(error.error.error.message)
       })
   }
@@ -54,6 +55,8 @@ export class BorrowComponent implements OnInit {
         this.getItem();
       })
   }
+
+
 
   onRemove(id){
     const data ={
@@ -92,6 +95,7 @@ export class BorrowComponent implements OnInit {
 
   toItem(){
     this.router.navigate(['/',AppURL.Authen,AuthenURL.Product])
+    
   }
 
   onDeleteList(){

@@ -9,10 +9,10 @@
                         <mat-icon class="example-tab-icon text-warning">ballot</mat-icon>
                         <span class="text-warning"> &nbsp; รายการอุปกรณ์</span>
                     </ng-template>
-                    <div *ngIf="!noItem" class="text-center mt-5 mb-5">
+                    <div *ngIf="noItem == true" class="text-center mt-5 mb-5">
                         <button mat-flat-button id="button" (click)="toItem()"><mat-icon>add</mat-icon> เพิ่มอุปกรณ์</button>
                     </div>
-                    <mat-card *ngIf="noItem" class="mt-5 mb-4">
+                    <mat-card *ngIf="noItem === false" class="mt-5 mb-4">
                         <mat-card-header>
                             <mat-card-title>
                                 <h1 class="text-center text-warning">รายการอุปกรณ์</h1>
@@ -85,7 +85,7 @@
                         <span class="text-success"> &nbsp; ยืม</span>
                     </ng-template>
                     <h1 class="text-center mt-5">รอการอนุมัติ</h1>
-                    <app-wait-borrow></app-wait-borrow>
+                        <app-wait-borrow></app-wait-borrow>
                 </mat-tab>
                 <mat-tab>
                     <ng-template mat-tab-label>
