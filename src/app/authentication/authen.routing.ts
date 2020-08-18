@@ -9,5 +9,6 @@ export const AuthenURL = {
   ProductList:'product-list',
   editProduct:'edit-product',
   productDetail:'product-detail',
-  Borrow : 'borrow'
+  Borrow : 'borrow',
+  Allow :'allow',
 }

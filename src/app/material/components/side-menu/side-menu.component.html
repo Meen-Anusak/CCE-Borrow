@@ -6,17 +6,22 @@
         <span matLine>แดชบอร์ด</span>
         <mat-icon mat-list-icon>dashboard</mat-icon>
     </a>
+    <a *ngIf="user != role.student && user != role.instructor" mat-list-item [routerLink]="['/',AppURL.Authen,AuthenURL.Allow]" routerLinkActive="a">
+        <span matLine>อนุมัติการยืม / คืน</span>
+        <mat-icon mat-list-icon>import_export
+        </mat-icon>
+    </a>
     <a *ngIf="user != role.student" mat-list-item [routerLink]="['/',AppURL.Authen,AuthenURL.Users]" routerLinkActive="a">
         <span matLine>ผู้ใช้งาน</span>
         <mat-icon mat-list-icon>group</mat-icon>
     </a>
-    <a mat-list-item [routerLink]="['/',AppURL.Authen,AuthenURL.Product]" routerLinkActive="a">
-        <span matLine>อุปกรณ์</span>
-        <mat-icon mat-list-icon>category</mat-icon>
-    </a>
     <a *ngIf="user != role.student" mat-list-item [routerLink]="['/',AppURL.Authen,AuthenURL.ProductList]" routerLinkActive="a">
         <span matLine>รายการอุปกรณ์</span>
         <mat-icon mat-list-icon>storage</mat-icon>
+    </a>
+    <a mat-list-item [routerLink]="['/',AppURL.Authen,AuthenURL.Product]" routerLinkActive="a">
+        <span matLine>อุปกรณ์</span>
+        <mat-icon mat-list-icon>category</mat-icon>
     </a>
     <a mat-list-item [routerLink]="['/',AppURL.Authen,AuthenURL.Borrow]" routerLinkActive="a">
         <span matLine>ยืม / คืน</span>

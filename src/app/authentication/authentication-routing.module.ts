@@ -13,6 +13,7 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { EditProductComponent } from './components/product-list/edit-product/edit-product.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { BorrowComponent } from './components/borrow/borrow.component';
+import { AllowComponent } from './components/allow/allow.component';
 
 
 
@@ -44,6 +45,7 @@ const routes: Routes = [
 {path:AuthenURL.editProduct+'/:id',component:EditProductComponent},
 {path:AuthenURL.productDetail+'/:id',component:ProductDetailComponent},
 {path:AuthenURL.Borrow,component:BorrowComponent},
+{path:AuthenURL.Allow,component:AllowComponent,data:{roles:['ผู้ดูแล','อาจารย์']}},
 ];
 
 @NgModule({

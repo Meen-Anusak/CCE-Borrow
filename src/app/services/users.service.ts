@@ -81,4 +81,15 @@ export class UsersService {
 
     return formuser
   }
+
+  public UserLogin: User = {} as any;
+  public setUserLogin(userLogin: User) {
+      this.UserLogin.studentID = userLogin.studentID;
+      this.UserLogin.fname = userLogin.fname;
+      this.UserLogin.lname = userLogin.lname;
+      this.UserLogin.password = userLogin.password;
+      this.UserLogin.image = userLogin.image;
+      this.UserLogin.role = userLogin.role;
+      return this.UserLogin;
+  }
 }

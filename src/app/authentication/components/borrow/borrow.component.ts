@@ -51,16 +51,28 @@ export class BorrowComponent implements OnInit {
     }
     this.borrow.onBorrow(this.authen.getAccessToken(),data)
       .subscribe(res=>{
-        this.alert.ontify_Success(res.message,3000)
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: `${res.message}`,
+          showConfirmButton: false,
+          timer: 1500
+        })
         this.getItem();
+      },error =>{
+        Swal.fire({
+          icon: 'error',
+          // title: 'Oops...',
+          text: error.error.error.message,
+        })
       })
   }
 
 
-
   onRemove(id){
     const data ={
-      _id : id
+      _id : id,
+    
     }
     this.borrow.RemoveItem(this.authen.getAccessToken(),data)
     .subscribe(res =>{
@@ -77,12 +89,15 @@ export class BorrowComponent implements OnInit {
       .subscribe(res =>{
         this.alert.ontify_Success(res.message,3000)
         this.getItem()
+      },error =>{
+        console.log(error)
       })
   }
 
   onDeleteItem(id){
     const data ={
-      _id : id
+      _id : id,
+      p_id : this.productId
     }
     this.borrow.onDelete(this.authen.getAccessToken(),data)
       .subscribe(res =>{
@@ -114,7 +129,7 @@ export class BorrowComponent implements OnInit {
         if (result.value) {
           this.borrow.onDeleteList(this.authen.getAccessToken(),data)
             .subscribe(res =>{
-              this.alert.ontify_Info(res.message,3000);
+              this.alert.ontify_Danger(res.message,3000);
               this.getItem()
       })
         }
