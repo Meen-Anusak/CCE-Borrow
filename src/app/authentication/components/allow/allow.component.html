@@ -1,3 +1,42 @@
 <app-side-bar>
     <h2 class="name-compo">Allow</h2>
+    
+   <div class="row mt-4">
+       <div class="col-md-10 mx-auto">
+        <mat-tab-group>
+            <mat-tab>
+              <ng-template mat-tab-label >
+                <mat-icon class="example-tab-icon text-success">unarchive
+                </mat-icon>
+              <span class="text-success"> &nbsp; อนุมัติการยืม</span>
+              </ng-template>
+              <h1 class="text-center m-4">รายการรออนุมัติการยืม</h1>
+           <div class="mt-3 mb-5 p-3">
+            <mat-card class="col-md-12 mt-4" *ngFor="let p of product" >
+              <mat-card-header class="justify-content-between">
+                  <mat-card-title>{{p.user.studentID}}</mat-card-title>
+                  <mat-card-subtitle>{{p.user.fname}} {{p.user.lname}}</mat-card-subtitle>
+                <div class="">
+                 <button class="button" mat-button (click)="openDialog(p.user._id)"><mat-icon>search</mat-icon>รายการอุปกรณ์</button>
+                </div>
+                <div class="">
+                  <button (click)="onAllow(p._id)" mat-icon-button class="mr-2 ml-2 button3"><mat-icon>done</mat-icon></button>
+                  <button (click)="onDelete(p._id)"  mat-icon-button class="button2"><mat-icon>clear</mat-icon></button>
+                </div>
+              </mat-card-header>
+            </mat-card>
+           </div>
+            </mat-tab>
+          
+            <mat-tab>
+              <ng-template mat-tab-label>
+                <mat-icon class="example-tab-icon text-info">archive
+                </mat-icon>
+              <span class="text-info">&nbsp;  คืนอุปกรณ์</span>
+              </ng-template>
+              Content 2
+            </mat-tab>
+          </mat-tab-group>
+       </div>
+   </div>
 </app-side-bar>

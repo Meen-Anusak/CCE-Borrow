@@ -83,7 +83,7 @@ export class UsersService {
   }
 
   public UserLogin: User = {} as any;
-  public setUserLogin(userLogin: User) {
+  private setUserLogin(userLogin: User) {
       this.UserLogin.studentID = userLogin.studentID;
       this.UserLogin.fname = userLogin.fname;
       this.UserLogin.lname = userLogin.lname;

@@ -52,10 +52,18 @@ export class Product2Service {
     return this.http.post<any>(`${environment.URL}borrow/borrow`,productId,{headers:Header});
   }
 
-  onGetwaitBorrow(accessToken){
+  onGetwaitBorrow(accessToken,user_id?){
     const Header ={
       'Authorization': 'Bearer '+ accessToken
     }
-    return this.http.get<any>(`${environment.URL}borrow/wait-borrow`,{headers:Header});
+    return this.http.post<any>(`${environment.URL}borrow/wait-borrow`,user_id,{headers:Header});
+  }
+
+  onGetBottow(){
+    return this.http.get<any>(`${environment.URL}borrow/allow`);
+  }
+
+  onAllow(id){
+    return this.http.post<any>(`${environment.URL}borrow/allow`,id)
   }
 }

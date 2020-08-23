@@ -1,0 +1,44 @@
+.over-lay {
+    position: relative;
+    width: 80px;
+    margin: 2px;
+}
+
+.over-lay>img {
+    height: 80px;
+    object-fit: cover;
+}
+
+.t {
+    padding-top: 25px;
+}
+
+mat-card {
+    padding: 30px 30px 30px 30px;
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 20px 20px -5px rgba(76, 175, 80, .4) !important;
+}
+
+thead>tr>th {
+    color: #555;
+    font-weight: bold;
+    font-size: medium;
+}
+
+tbody>tr>td {
+    font-size: medium;
+}
+
+td {
+    padding-top: 0%;
+    padding-bottom: 0%;
+}
+button{
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 20px 20px -7px rgba(255, 152, 0, .4) !important;
+    background: linear-gradient(60deg, #ffa726, #fb8c00);
+    color: #ffff;
+}
+
+*{
+    color:#3c4858;
+}
+

@@ -18,11 +18,12 @@ import { EditProductComponent } from './components/product-list/edit-product/edi
 import { BorrowComponent } from './components/borrow/borrow.component';
 import { WaitBorrowComponent } from './components/wait-borrow/wait-borrow.component';
 import { AllowComponent } from './components/allow/allow.component';
+import { ShowItemsComponent } from './components/allow/show-items/show-items.component';
 
 
 
 @NgModule({
-  declarations: [DashboardComponent, UsersComponent, CreateUserComponent, ProductComponent, CreateProductComponent, ProfileComponent, ChangePasswordComponent, EditUserComponent, ProductListComponent, ShowProductComponent, ProductDetailComponent, EditProductComponent, BorrowComponent, WaitBorrowComponent, AllowComponent,],
+  declarations: [DashboardComponent, UsersComponent, CreateUserComponent, ProductComponent, CreateProductComponent, ProfileComponent, ChangePasswordComponent, EditUserComponent, ProductListComponent, ShowProductComponent, ProductDetailComponent, EditProductComponent, BorrowComponent, WaitBorrowComponent, AllowComponent, ShowItemsComponent,],
   entryComponents: [ChangePasswordComponent],
   imports: [
     CommonModule,
