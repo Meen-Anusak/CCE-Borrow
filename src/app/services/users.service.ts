@@ -1,17 +1,28 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit, OnChanges, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../models/user-models';
 import { environment } from 'src/environments/environment';
+import { AuthenService } from './authen.service';
 
 
 @Injectable({
   providedIn: 'root'
 })
-export class UsersService {
+export class UsersService implements OnInit{
 
   constructor(
-    private http : HttpClient
-  ) { }
+    private http : HttpClient,
+    private authen : AuthenService
+  ) {
+    this.setUser()
+
+   }
+
+   ngOnInit(){
+
+   }
+
+
 
   onAdduser(userModel:User){
     return this.http.post<any>(`${environment.URL}users`,this.makeFormUser(userModel))
@@ -25,6 +36,7 @@ export class UsersService {
     const Header ={
       'Authorization': 'Bearer '+ accessToken
     }
+    this.setUser()
    return this.http.get<User>(`${environment.URL}users/profile`,{headers:Header})
   }
 
@@ -82,7 +94,18 @@ export class UsersService {
     return formuser
   }
 
+  public setUser(){
+    const Header ={
+      'Authorization': 'Bearer '+ this.authen.getAccessToken()
+    }
+   this.http.get<User>(`${environment.URL}users/profile`,{headers:Header})
+    .subscribe(res => {
+        this.setUserLogin(res) 
+    })
+  }
+
   public UserLogin: User = {} as any;
+
   private setUserLogin(userLogin: User) {
       this.UserLogin.studentID = userLogin.studentID;
       this.UserLogin.fname = userLogin.fname;
@@ -92,4 +115,5 @@ export class UsersService {
       this.UserLogin.role = userLogin.role;
       return this.UserLogin;
   }
+
 }

@@ -31,6 +31,7 @@ export class RoleGuard implements CanActivate {
         error (() => resolve(false))
       }
     )
+
     })
    }
 }

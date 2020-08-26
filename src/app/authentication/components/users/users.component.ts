@@ -49,12 +49,13 @@ export class UsersComponent implements OnInit {
   }
 
   getRole(){
-    this.usersService.onGetprofile(this.authen.getAccessToken())
-      .subscribe(
-        res =>{
-         this.userRole = res.role
-        }
-      )
+    // this.usersService.onGetprofile(this.authen.getAccessToken())
+    //   .subscribe(
+    //     res =>{
+    //      this.userRole = res.role
+    //     }
+    //   )
+    this.userRole = this.usersService.UserLogin.role;
   }
 
 

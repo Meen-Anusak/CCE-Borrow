@@ -4,6 +4,7 @@ import { AppURL } from 'src/app/app.routing';
 import { AuthenService } from 'src/app/services/authen.service';
 import { UsersService } from 'src/app/services/users.service';
 import { AuthenURL } from 'src/app/authentication/authen.routing';
+import { _MatTabGroupBase } from '@angular/material/tabs';
 
 
 
@@ -30,22 +31,16 @@ export class NavBarComponent implements OnInit {
     private authen : AuthenService,
     private usersService : UsersService,
   ) {
-
    }
 
   ngOnInit(): void {
-    this.ongetProfile()
+      this.onSet()
   }
 
-  ongetProfile(){
-    this.usersService.onGetprofile(this.authen.getAccessToken())
-      .subscribe(
-        res =>{
-          this.fname = res.fname;
-          this.lname = res.lname;
-          this.image = res.image;
-        }
-      )
+  onSet(){
+    this.fname = this.usersService.UserLogin.fname;
+    this.lname = this.usersService.UserLogin.lname;
+    this.image = this.usersService.UserLogin.image;
   }
 
 
