@@ -19,11 +19,16 @@ import { BorrowComponent } from './components/borrow/borrow.component';
 import { WaitBorrowComponent } from './components/wait-borrow/wait-borrow.component';
 import { AllowComponent } from './components/allow/allow.component';
 import { ShowItemsComponent } from './components/allow/show-items/show-items.component';
+import { ReturnBorrowComponent } from './components/allow/return-borrow/return-borrow.component';
+import { ReturnItemComponent } from './components/return-item/return-item.component';
+import { TableComponent } from './components/allow/table/table.component';
+import { TableReturnComponent } from './components/table-return/table-return.component';
+
 
 
 
 @NgModule({
-  declarations: [DashboardComponent, UsersComponent, CreateUserComponent, ProductComponent, CreateProductComponent, ProfileComponent, ChangePasswordComponent, EditUserComponent, ProductListComponent, ShowProductComponent, ProductDetailComponent, EditProductComponent, BorrowComponent, WaitBorrowComponent, AllowComponent, ShowItemsComponent,],
+  declarations: [DashboardComponent, UsersComponent, CreateUserComponent, ProductComponent, CreateProductComponent, ProfileComponent, ChangePasswordComponent, EditUserComponent, ProductListComponent, ShowProductComponent, ProductDetailComponent, EditProductComponent, BorrowComponent, WaitBorrowComponent, AllowComponent, ShowItemsComponent, ReturnBorrowComponent, ReturnItemComponent, TableComponent, TableReturnComponent,],
   entryComponents: [ChangePasswordComponent],
   imports: [
     CommonModule,

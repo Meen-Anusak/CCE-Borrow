@@ -1,0 +1,23 @@
+mat-card{
+    height: 70px;
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 20px 20px -5px rgba(0, 188, 212, .4) !important;
+}
+
+.button3{
+
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 20px 20px -5px rgba(76, 175, 80, .4) !important;
+    background: linear-gradient(60deg, #66bb6a, #43a047);
+    color: white;
+}
+*{
+    color:#3c4858;
+}
+mat-icon{
+    color:#fff;
+}
+
+.button{
+    background: linear-gradient(60deg, #ec407a, #d81b60);
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 20px 20px -7px rgba(233, 30, 99, .4) !important;
+    color: white;
+}

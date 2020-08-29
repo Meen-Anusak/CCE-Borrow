@@ -1,0 +1,27 @@
+
+.box-card3 {
+    border-radius: 5px;
+    height: 5.5rem;
+    width: 5.5rem;
+    position: absolute;
+    transform: translate(-3%, -50%);
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 20px 20px -5px rgba(0, 188, 212, .4) !important;
+    background: linear-gradient(60deg, #26c6da, #00acc1);
+}
+
+img {
+    width: 3.5rem;
+    height: 3.5rem;
+    position: absolute;
+    transform: translate(27%, 25%);
+}
+
+mat-card{
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 20px 20px -5px rgba(0, 188, 212, .4) !important;
+}
+
+
+th.mat-header-cell {
+    font-size: large;
+    color: #26c6da;
+}

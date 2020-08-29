@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { AppURL } from 'src/app/app.routing';
 import { AuthenURL } from '../../authen.routing';
 import  Swal  from "sweetalert2";
+import { UsersService } from 'src/app/services/users.service';
 @Component({
   selector: 'app-borrow',
   templateUrl: './borrow.component.html',
@@ -19,22 +20,29 @@ export class BorrowComponent implements OnInit {
   noItem :boolean = true;
   total : 0;
   productId:any;
+  fname : string;
+
   constructor(
     private borrow : Product2Service,
     private authen : AuthenService,
     private alert : AlertService,
     private location : Location,
-    private router : Router
+    private router : Router,
+    private usersService : UsersService,
   ) {
    }
 
   ngOnInit(): void {
-    this.getItem()
+    this.fname = this.usersService.UserLogin.fname;
+    this.getItem();
+   
+   
   }
 
   getItem(){
     this.borrow.getItemByUser(this.authen.getAccessToken())
       .subscribe(res =>{
+        console.log(res)
         this.items = res.data.data_items;
         this.total = res.data.total;
         this.productId = res.data.product_id

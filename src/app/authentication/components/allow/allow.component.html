@@ -10,14 +10,14 @@
                 </mat-icon>
               <span class="text-success"> &nbsp; อนุมัติการยืม</span>
               </ng-template>
-              <h1 class="text-center m-4">รายการรออนุมัติการยืม</h1>
+              <h1 class="text-center m-4">รายการรอ อนุมัติการยืม</h1>
            <div class="mt-3 mb-5 p-3">
             <mat-card class="col-md-12 mt-4" *ngFor="let p of product" >
               <mat-card-header class="justify-content-between">
                   <mat-card-title>{{p.user.studentID}}</mat-card-title>
                   <mat-card-subtitle>{{p.user.fname}} {{p.user.lname}}</mat-card-subtitle>
                 <div class="">
-                 <button class="button" mat-button (click)="openDialog(p.user._id)"><mat-icon>search</mat-icon>รายการอุปกรณ์</button>
+                 <button class="button" mat-button (click)="openDialog(p._id)"><mat-icon>search</mat-icon>รายการอุปกรณ์</button>
                 </div>
                 <div class="">
                   <button (click)="onAllow(p._id)" mat-icon-button class="mr-2 ml-2 button3"><mat-icon>done</mat-icon></button>
@@ -34,7 +34,17 @@
                 </mat-icon>
               <span class="text-info">&nbsp;  คืนอุปกรณ์</span>
               </ng-template>
-              Content 2
+              <h1 class="text-center m-4">รายการที่ต้องคืน</h1>
+              <app-return-borrow></app-return-borrow>
+            </mat-tab>
+            <mat-tab>
+              <ng-template mat-tab-label>
+                <mat-icon class="example-tab-icon text-warning">format_list_bulleted
+                </mat-icon>
+              <span class="text-warning">&nbsp;  ประวัติการยืม</span>
+              </ng-template>
+              <h1 class="text-center m-4">ประวัติการยืม</h1>
+             <app-table></app-table>
             </mat-tab>
           </mat-tab-group>
        </div>

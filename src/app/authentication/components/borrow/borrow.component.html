@@ -12,7 +12,7 @@
                     <div *ngIf="noItem == true" class="text-center mt-5 mb-5">
                         <button mat-flat-button id="button"  (click)="toItem()"><mat-icon class="text-white">add</mat-icon> เพิ่มอุปกรณ์</button>
                     </div>
-                    <mat-card *ngIf="noItem === false" class="mt-5 mb-4">
+                    <mat-card *ngIf="noItem === false" class="mt-4 mb-4">
                         <mat-card-header>
                             <mat-card-title>
                                 <h1 class="text-center text-warning">รายการอุปกรณ์</h1>
@@ -92,14 +92,16 @@
                         <mat-icon class="example-tab-icon text-info">archive</mat-icon>
                         <span class="text-info"> &nbsp; คืน</span>
                     </ng-template>
-                    <h1 class="text-center mt-5">อุปกรณ์ที่ต้องคืน</h1>
+                    <h1 class="text-center mt-5">อุปกรณ์ที่ต้องคืนของ {{fname}}</h1>
+                    <app-return-item></app-return-item>
                 </mat-tab>
                 <mat-tab>
                     <ng-template mat-tab-label>
                         <mat-icon class="example-tab-icon text-primary">format_list_bulleted</mat-icon>
                         <span class="text-primary"> &nbsp; ประวัติการ ยืม / คืน</span>
                     </ng-template>
-                    <h1 class="text-center mt-5">ประวัติการยืม</h1>
+                    <h1 class="text-center mt-5">ประวัติการยืมของ {{fname}} </h1>
+                    <app-table-return></app-table-return>
                 </mat-tab>
             </mat-tab-group>
         </div>

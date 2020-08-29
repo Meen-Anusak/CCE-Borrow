@@ -44,7 +44,9 @@ export class UsersService implements OnInit{
     const Header ={
       'Authorization': 'Bearer '+ accessToken
     }
+    this.setUser()
     return this.http.get<any>(`${environment.URL}users`,{headers:Header})
+   
     }
 
   onDelete(id,accessToken){
